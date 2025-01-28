@@ -16,10 +16,12 @@ Maintain full control over your AI stack. Integrate any AI inference service lik
 ## 🚀 Quick Start
 
 ### 1. Import Required Files
+Use the prebuilt version that comes in the `domini-play` folder:
 ```js
-import renderDomini from 'domini'
-import 'domini/style.css'
+import renderDomini from './domini-play'
+import './domini-play/style.css'
 ```
+You can find these files in the `domini-play` folder of this project.
 
 ### 2. Add Monaco Editor
 Add the Monaco Editor loader to your HTML file:
