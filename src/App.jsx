@@ -14,6 +14,7 @@ function App() {
       renderDomini(dominiContainer.current, {
         provider_base_url: "https://api.hyperbolic.xyz/v1",
         provider_api_key: "eyJhbG...",
+        provider_services: ["hyberbolic"],
         domini_coder_model: "Qwen/Qwen2.5-Coder-32B-Instruct",// "deepseek-ai/DeepSeek-V3"
         domini_vision_model: "Qwen/Qwen2-VL-72B-Instruct",
         domini_prompt_persona: prompts.PROMPT_PERSONA, // system prompt

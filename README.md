@@ -34,6 +34,7 @@ Add the Monaco Editor loader to your HTML file:
 renderDomini(dominiContainer, {
   provider_base_url: "https://api.hyperbolic.xyz/v1",
   provider_api_key: "your-api-key",
+  provider_services: ["hyberbolic"],
   domini_coder_model: "Qwen/Qwen2.5-Coder-32B-Instruct",
   domini_vision_model: "Qwen/Qwen2-VL-72B-Instruct",
 
@@ -53,4 +54,6 @@ Ensure these files are available in your public or build directory:
 
 ## 🔧 Customization
 - Change how Domini works by editing `prompts.js`
-- Add guide and examples in `api_docs.xml` to help Domini understand your tools better
+- Add guide and examples in `api_docs.xml` to help Domini understand your tools better:
+  - Each service in `provider_services` needs a matching tag in `api_docs.xml`.
+  - If a service name is called "Service Name", use tag `<service_name>`.

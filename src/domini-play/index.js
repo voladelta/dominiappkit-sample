@@ -11,7 +11,7 @@ function si(e) {
   for (var t = 0; t < e.length; t++)
     e[t]();
 }
-const wt = 2, $o = 4, Ln = 8, _i = 16, Nt = 32, En = 64, ai = 128, cn = 256, li = 512, lt = 1024, Yt = 2048, un = 4096, Pt = 8192, Tn = 16384, Io = 32768, Fn = 65536, Ys = 1 << 17, Gs = 1 << 19, Po = 1 << 20, sn = Symbol("$state"), Js = Symbol("legacy props"), Ks = Symbol("");
+const wt = 2, Io = 4, Ln = 8, _i = 16, Nt = 32, En = 64, ai = 128, cn = 256, li = 512, lt = 1024, Yt = 2048, un = 4096, Pt = 8192, Tn = 16384, $o = 32768, Fn = 65536, Ys = 1 << 17, Gs = 1 << 19, Po = 1 << 20, sn = Symbol("$state"), Js = Symbol("legacy props"), Ks = Symbol("");
 function Oo(e) {
   return e === this.v;
 }
@@ -87,7 +87,7 @@ function Y(e, t) {
   (Ot === null || !Ot.includes(e)) && oa(), ar(e, t);
 }
 function ar(e, t) {
-  return e.equals(t) || (e.v, e.v = t, e.wv = ts(), Uo(e, Yt), qn() && Le !== null && Le.f & lt && !(Le.f & (Nt | En)) && (Lt === null ? $a([e]) : Lt.push(e))), t;
+  return e.equals(t) || (e.v, e.v = t, e.wv = ts(), Uo(e, Yt), qn() && Le !== null && Le.f & lt && !(Le.f & (Nt | En)) && (Lt === null ? Ia([e]) : Lt.push(e))), t;
 }
 function Uo(e, t) {
   var n = e.reactions;
@@ -105,7 +105,7 @@ function Uo(e, t) {
     }
 }
 let No = !1;
-function _e(e, t = null, n) {
+function ke(e, t = null, n) {
   if (typeof e != "object" || e === null || sn in e)
     return e;
   const i = kr(e);
@@ -124,7 +124,7 @@ function _e(e, t = null, n) {
       defineProperty(d, a, h) {
         (!("value" in h) || h.configurable === !1 || h.enumerable === !1 || h.writable === !1) && na();
         var f = r.get(a);
-        return f === void 0 ? (f = yt(h.value), r.set(a, f)) : Y(f, _e(h.value, u)), !0;
+        return f === void 0 ? (f = yt(h.value), r.set(a, f)) : Y(f, ke(h.value, u)), !0;
       },
       deleteProperty(d, a) {
         var h = r.get(a);
@@ -147,7 +147,7 @@ function _e(e, t = null, n) {
         if (a === sn)
           return e;
         var f = r.get(a), m = a in d;
-        if (f === void 0 && (!m || (x = vn(d, a)) != null && x.writable) && (f = yt(_e(m ? d[a] : dt, u)), r.set(a, f)), f !== void 0) {
+        if (f === void 0 && (!m || (x = vn(d, a)) != null && x.writable) && (f = yt(ke(m ? d[a] : dt, u)), r.set(a, f)), f !== void 0) {
           var g = k(f);
           return g === dt ? void 0 : g;
         }
@@ -176,7 +176,7 @@ function _e(e, t = null, n) {
           return !0;
         var h = r.get(a), f = h !== void 0 && h.v !== dt || Reflect.has(d, a);
         if (h !== void 0 || Le !== null && (!f || (g = vn(d, a)) != null && g.writable)) {
-          h === void 0 && (h = yt(f ? _e(d[a], u) : dt), r.set(a, h));
+          h === void 0 && (h = yt(f ? ke(d[a], u) : dt), r.set(a, h));
           var m = k(h);
           if (m === dt)
             return !1;
@@ -192,7 +192,7 @@ function _e(e, t = null, n) {
             var E = r.get(x + "");
             E !== void 0 ? Y(E, dt) : x in d && (E = yt(dt), r.set(x + "", E));
           }
-        m === void 0 ? (!g || (U = vn(d, a)) != null && U.writable) && (m = yt(void 0), Y(m, _e(h, u)), r.set(a, m)) : (g = m.v !== dt, Y(m, _e(h, u)));
+        m === void 0 ? (!g || (U = vn(d, a)) != null && U.writable) && (m = yt(void 0), Y(m, ke(h, u)), r.set(a, m)) : (g = m.v !== dt, Y(m, ke(h, u)));
         var L = Reflect.getOwnPropertyDescriptor(d, a);
         if (L != null && L.set && L.set.call(f, h), !g) {
           if (o && typeof a == "string") {
@@ -345,7 +345,7 @@ function Ar(e) {
   Lo(e), Nn(e, 0), Et(e, Tn), e.v = e.children = e.deps = e.ctx = e.reactions = null;
 }
 function qo(e) {
-  Le === null && ze === null && Zs(), ze !== null && ze.f & cn && Qs(), Ir && Xs();
+  Le === null && ze === null && Zs(), ze !== null && ze.f & cn && Qs(), $r && Xs();
 }
 function ka(e, t) {
   var n = t.last;
@@ -372,7 +372,7 @@ function Dn(e, t, n, i = !0) {
   if (n) {
     var u = yn;
     try {
-      Hr(!0), Pr(s), s.f |= Io;
+      Hr(!0), Pr(s), s.f |= $o;
     } catch (h) {
       throw Wt(s), h;
     } finally {
@@ -423,7 +423,7 @@ function Ea(e) {
   });
 }
 function Vn(e) {
-  return Dn($o, e, !1);
+  return Dn(Io, e, !1);
 }
 function Si(e) {
   return Dn(Ln, e, !0);
@@ -441,7 +441,7 @@ function _n(e, t = !0) {
 function zo(e) {
   var t = e.teardown;
   if (t !== null) {
-    const n = Ir, i = ze;
+    const n = $r, i = ze;
     Yr(!0), Rt(null);
     try {
       t.call(null);
@@ -498,7 +498,7 @@ function Go(e) {
 }
 function di(e, t) {
   var n = [];
-  $r(e, n, !0), Jo(n, () => {
+  Ir(e, n, !0), Jo(n, () => {
     Wt(e), t && t();
   });
 }
@@ -511,14 +511,14 @@ function Jo(e, t) {
   } else
     t();
 }
-function $r(e, t, n) {
+function Ir(e, t, n) {
   if (!(e.f & Pt)) {
     if (e.f ^= Pt, e.transitions !== null)
       for (const s of e.transitions)
         (s.is_global || n) && t.push(s);
     for (var i = e.first; i !== null; ) {
       var r = i.next, o = (i.f & Fn) !== 0 || (i.f & Nt) !== 0;
-      $r(i, t, o ? n : !1), i = r;
+      Ir(i, t, o ? n : !1), i = r;
     }
   }
 }
@@ -553,12 +553,12 @@ function Qo(e) {
   throw new Error("https://svelte.dev/e/lifecycle_outside_component");
 }
 const Zo = 0, Da = 1;
-let ti = !1, ni = Zo, Rn = !1, Un = null, yn = !1, Ir = !1;
+let ti = !1, ni = Zo, Rn = !1, Un = null, yn = !1, $r = !1;
 function Hr(e) {
   yn = e;
 }
 function Yr(e) {
-  Ir = e;
+  $r = e;
 }
 let nn = [], bn = 0;
 let ze = null, qt = !1;
@@ -574,7 +574,7 @@ function Aa(e) {
   Ot = e;
 }
 let ht = null, vt = 0, Lt = null;
-function $a(e) {
+function Ia(e) {
   Lt = e;
 }
 let es = 1, mi = 0, rn = !1, Ve = null;
@@ -612,7 +612,7 @@ function Wn(e) {
   }
   return !1;
 }
-function Ia(e, t) {
+function $a(e, t) {
   for (var n = t; n !== null; ) {
     if (n.f & ai)
       try {
@@ -636,7 +636,7 @@ function Ci(e, t, n, i) {
   }
   n !== null && (ti = !0);
   {
-    Ia(e, t);
+    $a(e, t);
     return;
   }
 }
@@ -814,7 +814,7 @@ function ss(e, t) {
           n = d;
           continue;
         }
-      } else r & $o && i.push(n);
+      } else r & Io && i.push(n);
     if (u === null) {
       let f = n.parent;
       for (; f !== null; ) {
@@ -1236,7 +1236,7 @@ function ds(e, t) {
 }
 function Xa(e, t, n, i) {
   for (var r = [], o = t.length, s = 0; s < o; s++)
-    $r(t[s].e, r, !0);
+    Ir(t[s].e, r, !0);
   var u = o > 0 && r.length === 0 && n !== null;
   if (u) {
     var d = (
@@ -1591,7 +1591,7 @@ function Vt(e, t, n, i) {
       ); X && X.f & Fn; )
         for (; (X = X.parent) && !(X.f & _i); )
           ;
-      q = !X || (X.f & Io) !== 0;
+      q = !X || (X.f & $o) !== 0;
     }
     q && Vn(() => {
       zt(() => E.in());
@@ -1941,7 +1941,7 @@ function Ur(e, t, n, i) {
   );
   return r || (ee.equals = Er), function(Z, D) {
     if (arguments.length > 0) {
-      const ve = D ? k(ee) : o && s ? _e(Z) : Z;
+      const ve = D ? k(ee) : o && s ? ke(Z) : Z;
       return ee.equals(ve) || (U = !0, Y(G, ve), x && m !== void 0 && (m = ve), zt(() => k(ee))), Z;
     }
     return k(ee);
@@ -2036,14 +2036,14 @@ function bl() {
         var J = (O) => {
           try {
             ie(y.next(O));
-          } catch (xe) {
-            F(xe);
+          } catch (_e) {
+            F(_e);
           }
         }, B = (O) => {
           try {
             ie(y.throw(O));
-          } catch (xe) {
-            F(xe);
+          } catch (_e) {
+            F(_e);
           }
         }, ie = (O) => O.done ? A(O.value) : Promise.resolve(O.value).then(J, B);
         ie((y = y.apply(c, p)).next());
@@ -2060,7 +2060,7 @@ function bl() {
         initialize: () => Bi,
         stop: () => ji,
         transform: () => fn,
-        transformSync: () => $n,
+        transformSync: () => In,
         version: () => gt
       }), t.exports = d(h);
       function f(c) {
@@ -2235,12 +2235,12 @@ is not a problem with esbuild. You need to fix your environment instead.
         return c;
       }
       function Be(c, p, y) {
-        let A = v(p, y, "legalComments", D), F = v(p, y, "sourceRoot", D), J = v(p, y, "sourcesContent", Z), B = v(p, y, "target", de), ie = v(p, y, "format", D), O = v(p, y, "globalName", D), xe = v(p, y, "mangleProps", ve), ke = v(p, y, "reserveProps", ve), pe = v(p, y, "mangleQuoted", Z), Oe = v(p, y, "minify", Z), ye = v(p, y, "minifySyntax", Z), Ce = v(p, y, "minifyWhitespace", Z), De = v(p, y, "minifyIdentifiers", Z), ae = v(p, y, "lineLimit", ne), He = v(p, y, "drop", Se), oe = v(p, y, "dropLabels", Se), se = v(p, y, "charset", D), z = v(p, y, "treeShaking", Z), P = v(p, y, "ignoreAnnotations", Z), b = v(p, y, "jsx", D), T = v(p, y, "jsxFactory", D), R = v(p, y, "jsxFragment", D), _ = v(p, y, "jsxImportSource", D), M = v(p, y, "jsxDev", Z), S = v(p, y, "jsxSideEffects", Z), $ = v(p, y, "define", K), l = v(p, y, "logOverride", K), w = v(p, y, "supported", K), I = v(p, y, "pure", Se), C = v(p, y, "keepNames", Z), V = v(p, y, "platform", D), le = v(p, y, "tsconfigRaw", ce);
+        let A = v(p, y, "legalComments", D), F = v(p, y, "sourceRoot", D), J = v(p, y, "sourcesContent", Z), B = v(p, y, "target", de), ie = v(p, y, "format", D), O = v(p, y, "globalName", D), _e = v(p, y, "mangleProps", ve), xe = v(p, y, "reserveProps", ve), pe = v(p, y, "mangleQuoted", Z), Oe = v(p, y, "minify", Z), ye = v(p, y, "minifySyntax", Z), Ce = v(p, y, "minifyWhitespace", Z), De = v(p, y, "minifyIdentifiers", Z), ae = v(p, y, "lineLimit", ne), He = v(p, y, "drop", Se), oe = v(p, y, "dropLabels", Se), se = v(p, y, "charset", D), z = v(p, y, "treeShaking", Z), P = v(p, y, "ignoreAnnotations", Z), b = v(p, y, "jsx", D), T = v(p, y, "jsxFactory", D), R = v(p, y, "jsxFragment", D), _ = v(p, y, "jsxImportSource", D), M = v(p, y, "jsxDev", Z), S = v(p, y, "jsxSideEffects", Z), I = v(p, y, "define", K), l = v(p, y, "logOverride", K), w = v(p, y, "supported", K), $ = v(p, y, "pure", Se), C = v(p, y, "keepNames", Z), V = v(p, y, "platform", D), le = v(p, y, "tsconfigRaw", ce);
         if (A && c.push(`--legal-comments=${A}`), F !== void 0 && c.push(`--source-root=${F}`), J !== void 0 && c.push(`--sources-content=${J}`), B && (Array.isArray(B) ? c.push(`--target=${Array.from(B).map(ee).join(",")}`) : c.push(`--target=${ee(B)}`)), ie && c.push(`--format=${ie}`), O && c.push(`--global-name=${O}`), V && c.push(`--platform=${V}`), le && c.push(`--tsconfig-raw=${typeof le == "string" ? le : JSON.stringify(le)}`), Oe && c.push("--minify"), ye && c.push("--minify-syntax"), Ce && c.push("--minify-whitespace"), De && c.push("--minify-identifiers"), ae && c.push(`--line-limit=${ae}`), se && c.push(`--charset=${se}`), z !== void 0 && c.push(`--tree-shaking=${z}`), P && c.push("--ignore-annotations"), He) for (let me of He) c.push(`--drop:${Ne(me, "drop")}`);
-        if (oe && c.push(`--drop-labels=${Array.from(oe).map((me) => Ne(me, "dropLabels")).join(",")}`), xe && c.push(`--mangle-props=${xe.source}`), ke && c.push(`--reserve-props=${ke.source}`), pe !== void 0 && c.push(`--mangle-quoted=${pe}`), b && c.push(`--jsx=${b}`), T && c.push(`--jsx-factory=${T}`), R && c.push(`--jsx-fragment=${R}`), _ && c.push(`--jsx-import-source=${_}`), M && c.push("--jsx-dev"), S && c.push("--jsx-side-effects"), $)
-          for (let me in $) {
+        if (oe && c.push(`--drop-labels=${Array.from(oe).map((me) => Ne(me, "dropLabels")).join(",")}`), _e && c.push(`--mangle-props=${_e.source}`), xe && c.push(`--reserve-props=${xe.source}`), pe !== void 0 && c.push(`--mangle-quoted=${pe}`), b && c.push(`--jsx=${b}`), T && c.push(`--jsx-factory=${T}`), R && c.push(`--jsx-fragment=${R}`), _ && c.push(`--jsx-import-source=${_}`), M && c.push("--jsx-dev"), S && c.push("--jsx-side-effects"), I)
+          for (let me in I) {
             if (me.indexOf("=") >= 0) throw new Error(`Invalid define: ${me}`);
-            c.push(`--define:${me}=${Ne($[me], "define", me)}`);
+            c.push(`--define:${me}=${Ne(I[me], "define", me)}`);
           }
         if (l)
           for (let me in l) {
@@ -2254,14 +2254,14 @@ is not a problem with esbuild. You need to fix your environment instead.
             if (typeof ue != "boolean") throw new Error(`Expected value for supported ${U(me)} to be a boolean, got ${typeof ue} instead`);
             c.push(`--supported:${me}=${ue}`);
           }
-        if (I) for (let me of I) c.push(`--pure:${Ne(me, "pure")}`);
+        if ($) for (let me of $) c.push(`--pure:${Ne(me, "pure")}`);
         C && c.push("--keep-names");
       }
       function Qe(c, p, y, A, F) {
         var J;
-        let B = [], ie = [], O = /* @__PURE__ */ Object.create(null), xe = null, ke = null;
+        let B = [], ie = [], O = /* @__PURE__ */ Object.create(null), _e = null, xe = null;
         it(B, p, O, y, A), Be(B, p, O);
-        let pe = v(p, O, "sourcemap", W), Oe = v(p, O, "bundle", Z), ye = v(p, O, "splitting", Z), Ce = v(p, O, "preserveSymlinks", Z), De = v(p, O, "metafile", Z), ae = v(p, O, "outfile", D), He = v(p, O, "outdir", D), oe = v(p, O, "outbase", D), se = v(p, O, "tsconfig", D), z = v(p, O, "resolveExtensions", Se), P = v(p, O, "nodePaths", Se), b = v(p, O, "mainFields", Se), T = v(p, O, "conditions", Se), R = v(p, O, "external", Se), _ = v(p, O, "packages", D), M = v(p, O, "alias", K), S = v(p, O, "loader", K), $ = v(p, O, "outExtension", K), l = v(p, O, "publicPath", D), w = v(p, O, "entryNames", D), I = v(p, O, "chunkNames", D), C = v(p, O, "assetNames", D), V = v(p, O, "inject", Se), le = v(p, O, "banner", K), me = v(p, O, "footer", K), ue = v(p, O, "entryPoints", H), $e = v(p, O, "absWorkingDir", D), we = v(p, O, "stdin", K), Ie = (J = v(p, O, "write", Z)) != null ? J : F, ut = v(p, O, "allowOverwrite", Z), Xe = v(p, O, "mangleCache", K);
+        let pe = v(p, O, "sourcemap", W), Oe = v(p, O, "bundle", Z), ye = v(p, O, "splitting", Z), Ce = v(p, O, "preserveSymlinks", Z), De = v(p, O, "metafile", Z), ae = v(p, O, "outfile", D), He = v(p, O, "outdir", D), oe = v(p, O, "outbase", D), se = v(p, O, "tsconfig", D), z = v(p, O, "resolveExtensions", Se), P = v(p, O, "nodePaths", Se), b = v(p, O, "mainFields", Se), T = v(p, O, "conditions", Se), R = v(p, O, "external", Se), _ = v(p, O, "packages", D), M = v(p, O, "alias", K), S = v(p, O, "loader", K), I = v(p, O, "outExtension", K), l = v(p, O, "publicPath", D), w = v(p, O, "entryNames", D), $ = v(p, O, "chunkNames", D), C = v(p, O, "assetNames", D), V = v(p, O, "inject", Se), le = v(p, O, "banner", K), me = v(p, O, "footer", K), ue = v(p, O, "entryPoints", H), Ie = v(p, O, "absWorkingDir", D), we = v(p, O, "stdin", K), $e = (J = v(p, O, "write", Z)) != null ? J : F, ut = v(p, O, "allowOverwrite", Z), Xe = v(p, O, "mangleCache", K);
         if (O.plugins = !0, ge(p, O, `in ${c}() call`), pe && B.push(`--sourcemap${pe === !0 ? "" : `=${pe}`}`), Oe && B.push("--bundle"), ut && B.push("--allow-overwrite"), ye && B.push("--splitting"), Ce && B.push("--preserve-symlinks"), De && B.push("--metafile"), ae && B.push(`--outfile=${ae}`), He && B.push(`--outdir=${He}`), oe && B.push(`--outbase=${oe}`), se && B.push(`--tsconfig=${se}`), _ && B.push(`--packages=${_}`), z) {
           let re = [];
           for (let We of z) {
@@ -2270,7 +2270,7 @@ is not a problem with esbuild. You need to fix your environment instead.
           }
           B.push(`--resolve-extensions=${re.join(",")}`);
         }
-        if (l && B.push(`--public-path=${l}`), w && B.push(`--entry-names=${w}`), I && B.push(`--chunk-names=${I}`), C && B.push(`--asset-names=${C}`), b) {
+        if (l && B.push(`--public-path=${l}`), w && B.push(`--entry-names=${w}`), $ && B.push(`--chunk-names=${$}`), C && B.push(`--asset-names=${C}`), b) {
           let re = [];
           for (let We of b) {
             if (Ne(We, "main field"), We.indexOf(",") >= 0) throw new Error(`Invalid main field: ${We}`);
@@ -2308,20 +2308,20 @@ is not a problem with esbuild. You need to fix your environment instead.
             if (re.indexOf("=") >= 0) throw new Error(`Invalid loader extension: ${re}`);
             B.push(`--loader:${re}=${Ne(S[re], "loader", re)}`);
           }
-        if ($)
-          for (let re in $) {
+        if (I)
+          for (let re in I) {
             if (re.indexOf("=") >= 0) throw new Error(`Invalid out extension: ${re}`);
-            B.push(`--out-extension:${re}=${Ne($[re], "out extension", re)}`);
+            B.push(`--out-extension:${re}=${Ne(I[re], "out extension", re)}`);
           }
         if (ue)
           if (Array.isArray(ue))
             for (let re = 0, We = ue.length; re < We; re++) {
               let ft = ue[re];
               if (typeof ft == "object" && ft !== null) {
-                let tt = /* @__PURE__ */ Object.create(null), Ye = v(ft, tt, "in", D), $t = v(ft, tt, "out", D);
+                let tt = /* @__PURE__ */ Object.create(null), Ye = v(ft, tt, "in", D), It = v(ft, tt, "out", D);
                 if (ge(ft, tt, "in entry point at index " + re), Ye === void 0) throw new Error('Missing property "in" for entry point at index ' + re);
-                if ($t === void 0) throw new Error('Missing property "out" for entry point at index ' + re);
-                ie.push([$t, Ye]);
+                if (It === void 0) throw new Error('Missing property "out" for entry point at index ' + re);
+                ie.push([It, Ye]);
               } else
                 ie.push(["", Ne(ft, "entry point at index " + re)]);
             }
@@ -2330,7 +2330,7 @@ is not a problem with esbuild. You need to fix your environment instead.
               ie.push([re, Ne(ue[re], "entry point", re)]);
         if (we) {
           let re = /* @__PURE__ */ Object.create(null), We = v(we, re, "contents", Te), ft = v(we, re, "resolveDir", D), tt = v(we, re, "sourcefile", D), Ye = v(we, re, "loader", D);
-          ge(we, re, 'in "stdin" object'), tt && B.push(`--sourcefile=${tt}`), Ye && B.push(`--loader=${Ye}`), ft && (ke = ft), typeof We == "string" ? xe = x(We) : We instanceof Uint8Array && (xe = We);
+          ge(we, re, 'in "stdin" object'), tt && B.push(`--sourcefile=${tt}`), Ye && B.push(`--loader=${Ye}`), ft && (xe = ft), typeof We == "string" ? _e = x(We) : We instanceof Uint8Array && (_e = We);
         }
         let kt = [];
         if (P)
@@ -2339,10 +2339,10 @@ is not a problem with esbuild. You need to fix your environment instead.
         return {
           entries: ie,
           flags: B,
-          write: Ie,
-          stdinContents: xe,
-          stdinResolveDir: ke,
-          absWorkingDir: $e,
+          write: $e,
+          stdinContents: _e,
+          stdinResolveDir: xe,
+          absWorkingDir: Ie,
           nodePaths: kt,
           mangleCache: ct(Xe)
         };
@@ -2350,8 +2350,8 @@ is not a problem with esbuild. You need to fix your environment instead.
       function Ze(c, p, y, A) {
         let F = [], J = /* @__PURE__ */ Object.create(null);
         it(F, p, J, y, A), Be(F, p, J);
-        let B = v(p, J, "sourcemap", W), ie = v(p, J, "sourcefile", D), O = v(p, J, "loader", D), xe = v(p, J, "banner", D), ke = v(p, J, "footer", D), pe = v(p, J, "mangleCache", K);
-        return ge(p, J, `in ${c}() call`), B && F.push(`--sourcemap=${B === !0 ? "external" : B}`), ie && F.push(`--sourcefile=${ie}`), O && F.push(`--loader=${O}`), xe && F.push(`--banner=${xe}`), ke && F.push(`--footer=${ke}`), {
+        let B = v(p, J, "sourcemap", W), ie = v(p, J, "sourcefile", D), O = v(p, J, "loader", D), _e = v(p, J, "banner", D), xe = v(p, J, "footer", D), pe = v(p, J, "mangleCache", K);
+        return ge(p, J, `in ${c}() call`), B && F.push(`--sourcemap=${B === !0 ? "external" : B}`), ie && F.push(`--sourcefile=${ie}`), O && F.push(`--loader=${O}`), _e && F.push(`--banner=${_e}`), xe && F.push(`--footer=${xe}`), {
           flags: F,
           mangleCache: ct(pe)
         };
@@ -2373,13 +2373,13 @@ is not a problem with esbuild. You need to fix your environment instead.
             P += 4, Ce(B.subarray(P, P + b)), P += b;
           }
           P > 0 && (B.copyWithin(0, P, ie), ie -= P);
-        }, xe = (se) => {
+        }, _e = (se) => {
           y.didClose = !0, se && (y.reason = ": " + (se.message || se));
           const z = "The service was stopped" + y.reason;
           for (let P in A)
             A[P](z, null);
           A = {};
-        }, ke = (se, z, P) => {
+        }, xe = (se, z, P) => {
           if (y.didClose) return P("The service is no longer running" + y.reason, null);
           let b = F++;
           A[b] = (T, R) => {
@@ -2434,11 +2434,11 @@ is not a problem with esbuild. You need to fix your environment instead.
         };
         return {
           readFromStdout: O,
-          afterClose: xe,
+          afterClose: _e,
           service: {
             buildOrContext: ({ callName: se, refs: z, options: P, isTTY: b, defaultWD: T, callback: R }) => {
               let _ = 0;
-              const M = J++, S = {}, $ = {
+              const M = J++, S = {}, I = {
                 ref() {
                   ++_ === 1 && z && z.ref();
                 },
@@ -2446,12 +2446,12 @@ is not a problem with esbuild. You need to fix your environment instead.
                   --_ === 0 && (delete p[M], z && z.unref());
                 }
               };
-              p[M] = S, $.ref(), rt(
+              p[M] = S, I.ref(), rt(
                 se,
                 M,
-                ke,
+                xe,
                 pe,
-                $,
+                I,
                 c,
                 S,
                 P,
@@ -2461,29 +2461,29 @@ is not a problem with esbuild. You need to fix your environment instead.
                   try {
                     R(l, w);
                   } finally {
-                    $.unref();
+                    I.unref();
                   }
                 }
               );
             },
             transform: ({ callName: se, refs: z, input: P, options: b, isTTY: T, fs: R, callback: _ }) => {
               const M = xt();
-              let S = ($) => {
+              let S = (I) => {
                 try {
                   if (typeof P != "string" && !(P instanceof Uint8Array))
                     throw new Error('The input to "transform" must be a string or a Uint8Array');
                   let {
                     flags: l,
                     mangleCache: w
-                  } = Ze(se, b, T, G), I = {
+                  } = Ze(se, b, T, G), $ = {
                     command: "transform",
                     flags: l,
-                    inputFS: $ !== null,
-                    input: $ !== null ? x($) : typeof P == "string" ? x(P) : P
+                    inputFS: I !== null,
+                    input: I !== null ? x(I) : typeof P == "string" ? x(P) : P
                   };
-                  w && (I.mangleCache = w), ke(z, I, (C, V) => {
+                  w && ($.mangleCache = w), xe(z, $, (C, V) => {
                     if (C) return _(new Error(C), null);
-                    let le = Me(V.errors, M), me = Me(V.warnings, M), ue = 1, $e = () => {
+                    let le = Me(V.errors, M), me = Me(V.warnings, M), ue = 1, Ie = () => {
                       if (--ue === 0) {
                         let we = {
                           warnings: me,
@@ -2496,11 +2496,11 @@ is not a problem with esbuild. You need to fix your environment instead.
                       }
                     };
                     if (le.length > 0) return _(fe("Transform failed", le, me), null);
-                    V.codeFS && (ue++, R.readFile(V.code, (we, Ie) => {
-                      we !== null ? _(we, null) : (V.code = Ie, $e());
-                    })), V.mapFS && (ue++, R.readFile(V.map, (we, Ie) => {
-                      we !== null ? _(we, null) : (V.map = Ie, $e());
-                    })), $e();
+                    V.codeFS && (ue++, R.readFile(V.code, (we, $e) => {
+                      we !== null ? _(we, null) : (V.code = $e, Ie());
+                    })), V.mapFS && (ue++, R.readFile(V.map, (we, $e) => {
+                      we !== null ? _(we, null) : (V.map = $e, Ie());
+                    })), Ie();
                   });
                 } catch (l) {
                   let w = [];
@@ -2508,15 +2508,15 @@ is not a problem with esbuild. You need to fix your environment instead.
                     it(w, b, {}, T, G);
                   } catch {
                   }
-                  const I = mt(l, c, M, void 0, "");
-                  ke(z, { command: "error", flags: w, error: I }, () => {
-                    I.detail = M.load(I.detail), _(fe("Transform failed", [I], []), null);
+                  const $ = mt(l, c, M, void 0, "");
+                  xe(z, { command: "error", flags: w, error: $ }, () => {
+                    $.detail = M.load($.detail), _(fe("Transform failed", [$], []), null);
                   });
                 }
               };
               if ((typeof P == "string" || P instanceof Uint8Array) && P.length > 1024 * 1024) {
-                let $ = S;
-                S = () => R.writeFile(P, $);
+                let I = S;
+                S = () => R.writeFile(P, I);
               }
               S(null);
             },
@@ -2525,12 +2525,12 @@ is not a problem with esbuild. You need to fix your environment instead.
               let R = {}, _ = v(b, R, "kind", D), M = v(b, R, "color", Z), S = v(b, R, "terminalWidth", ne);
               if (ge(b, R, `in ${se}() call`), _ === void 0) throw new Error(`Missing "kind" in ${se}() call`);
               if (_ !== "error" && _ !== "warning") throw new Error(`Expected "kind" to be "error" or "warning" in ${se}() call`);
-              let $ = {
+              let I = {
                 command: "format-msgs",
                 messages: qe(P, "messages", null, "", S),
                 isWarning: _ === "warning"
               };
-              M !== void 0 && ($.color = M), S !== void 0 && ($.terminalWidth = S), ke(z, $, (l, w) => {
+              M !== void 0 && (I.color = M), S !== void 0 && (I.terminalWidth = S), xe(z, I, (l, w) => {
                 if (l) return T(new Error(l), null);
                 T(null, w.messages);
               });
@@ -2543,15 +2543,15 @@ is not a problem with esbuild. You need to fix your environment instead.
                 command: "analyze-metafile",
                 metafile: P
               };
-              _ !== void 0 && (S.color = _), M !== void 0 && (S.verbose = M), ke(z, S, ($, l) => {
-                if ($) return T(new Error($), null);
+              _ !== void 0 && (S.color = _), M !== void 0 && (S.verbose = M), xe(z, S, (I, l) => {
+                if (I) return T(new Error(I), null);
                 T(null, l.result);
               });
             }
           }
         };
       }
-      function rt(c, p, y, A, F, J, B, ie, O, xe, ke) {
+      function rt(c, p, y, A, F, J, B, ie, O, _e, xe) {
         const pe = xt(), Oe = c === "context", ye = (ae, He) => {
           const oe = [];
           try {
@@ -2560,7 +2560,7 @@ is not a problem with esbuild. You need to fix your environment instead.
           }
           const se = mt(ae, J, pe, void 0, He);
           y(F, { command: "error", flags: oe, error: se }, () => {
-            se.detail = pe.load(se.detail), ke(fe(Oe ? "Context failed" : "Build failed", [se], []), null);
+            se.detail = pe.load(se.detail), xe(fe(Oe ? "Context failed" : "Build failed", [se], []), null);
           });
         };
         let Ce;
@@ -2614,7 +2614,7 @@ is not a problem with esbuild. You need to fix your environment instead.
             mangleCache: S
           } = Qe(c, ie, O, Q, se);
           if (b && !J.hasFS) throw new Error('The "write" option is unavailable in this environment');
-          const $ = {
+          const I = {
             command: "build",
             key: p,
             entries: z,
@@ -2622,11 +2622,11 @@ is not a problem with esbuild. You need to fix your environment instead.
             write: b,
             stdinContents: T,
             stdinResolveDir: R,
-            absWorkingDir: _ || xe,
+            absWorkingDir: _ || _e,
             nodePaths: M,
             context: Oe
           };
-          ae && ($.plugins = ae), S && ($.mangleCache = S);
+          ae && (I.plugins = ae), S && (I.mangleCache = S);
           const l = (C, V) => {
             const le = {
               errors: Me(C.errors, pe),
@@ -2635,69 +2635,69 @@ is not a problem with esbuild. You need to fix your environment instead.
               metafile: void 0,
               mangleCache: void 0
             }, me = le.errors.slice(), ue = le.warnings.slice();
-            C.outputFiles && (le.outputFiles = C.outputFiles.map(ot)), C.metafile && (le.metafile = JSON.parse(C.metafile)), C.mangleCache && (le.mangleCache = C.mangleCache), C.writeToStdout !== void 0 && console.log(E(C.writeToStdout).replace(/\n$/, "")), He(le, ($e, we) => {
-              if (me.length > 0 || $e.length > 0) {
-                const Ie = fe("Build failed", me.concat($e), ue.concat(we));
-                return V(Ie, null, $e, we);
+            C.outputFiles && (le.outputFiles = C.outputFiles.map(ot)), C.metafile && (le.metafile = JSON.parse(C.metafile)), C.mangleCache && (le.mangleCache = C.mangleCache), C.writeToStdout !== void 0 && console.log(E(C.writeToStdout).replace(/\n$/, "")), He(le, (Ie, we) => {
+              if (me.length > 0 || Ie.length > 0) {
+                const $e = fe("Build failed", me.concat(Ie), ue.concat(we));
+                return V($e, null, Ie, we);
               }
-              V(null, le, $e, we);
+              V(null, le, Ie, we);
             });
           };
-          let w, I;
+          let w, $;
           Oe && (B["on-end"] = (C, V) => new Promise((le) => {
-            l(V, (me, ue, $e, we) => {
-              const Ie = {
-                errors: $e,
+            l(V, (me, ue, Ie, we) => {
+              const $e = {
+                errors: Ie,
                 warnings: we
               };
-              I && I(me, ue), w = void 0, I = void 0, A(C, Ie), le();
+              $ && $(me, ue), w = void 0, $ = void 0, A(C, $e), le();
             });
-          })), y(F, $, (C, V) => {
-            if (C) return ke(new Error(C), null);
+          })), y(F, I, (C, V) => {
+            if (C) return xe(new Error(C), null);
             if (!Oe)
-              return l(V, (ue, $e) => (oe(), ke(ue, $e)));
+              return l(V, (ue, Ie) => (oe(), xe(ue, Ie)));
             if (V.errors.length > 0)
-              return ke(fe("Context failed", V.errors, V.warnings), null);
+              return xe(fe("Context failed", V.errors, V.warnings), null);
             let le = !1;
             const me = {
-              rebuild: () => (w || (w = new Promise((ue, $e) => {
+              rebuild: () => (w || (w = new Promise((ue, Ie) => {
                 let we;
-                I = (ut, Xe) => {
-                  we || (we = () => ut ? $e(ut) : ue(Xe));
+                $ = (ut, Xe) => {
+                  we || (we = () => ut ? Ie(ut) : ue(Xe));
                 };
-                const Ie = () => {
+                const $e = () => {
                   y(F, {
                     command: "rebuild",
                     key: p
                   }, (Xe, kt) => {
-                    Xe ? $e(new Error(Xe)) : we ? we() : Ie();
+                    Xe ? Ie(new Error(Xe)) : we ? we() : $e();
                   });
                 };
-                Ie();
+                $e();
               })), w),
-              watch: (ue = {}) => new Promise(($e, we) => {
+              watch: (ue = {}) => new Promise((Ie, we) => {
                 if (!J.hasFS) throw new Error('Cannot use the "watch" API in this environment');
                 ge(ue, {}, "in watch() call"), y(F, {
                   command: "watch",
                   key: p
                 }, (Xe) => {
-                  Xe ? we(new Error(Xe)) : $e(void 0);
+                  Xe ? we(new Error(Xe)) : Ie(void 0);
                 });
               }),
-              serve: (ue = {}) => new Promise(($e, we) => {
+              serve: (ue = {}) => new Promise((Ie, we) => {
                 if (!J.hasFS) throw new Error('Cannot use the "serve" API in this environment');
-                const Ie = {}, ut = v(ue, Ie, "port", ne), Xe = v(ue, Ie, "host", D), kt = v(ue, Ie, "servedir", D), re = v(ue, Ie, "keyfile", D), We = v(ue, Ie, "certfile", D), ft = v(ue, Ie, "fallback", D), tt = v(ue, Ie, "onRequest", be);
-                ge(ue, Ie, "in serve() call");
+                const $e = {}, ut = v(ue, $e, "port", ne), Xe = v(ue, $e, "host", D), kt = v(ue, $e, "servedir", D), re = v(ue, $e, "keyfile", D), We = v(ue, $e, "certfile", D), ft = v(ue, $e, "fallback", D), tt = v(ue, $e, "onRequest", be);
+                ge(ue, $e, "in serve() call");
                 const Ye = {
                   command: "serve",
                   key: p,
                   onRequest: !!tt
                 };
-                ut !== void 0 && (Ye.port = ut), Xe !== void 0 && (Ye.host = Xe), kt !== void 0 && (Ye.servedir = kt), re !== void 0 && (Ye.keyfile = re), We !== void 0 && (Ye.certfile = We), ft !== void 0 && (Ye.fallback = ft), y(F, Ye, ($t, Fi) => {
-                  if ($t) return we(new Error($t));
+                ut !== void 0 && (Ye.port = ut), Xe !== void 0 && (Ye.host = Xe), kt !== void 0 && (Ye.servedir = kt), re !== void 0 && (Ye.keyfile = re), We !== void 0 && (Ye.certfile = We), ft !== void 0 && (Ye.fallback = ft), y(F, Ye, (It, Fi) => {
+                  if (It) return we(new Error(It));
                   tt && (B["serve-request"] = (Vi, hn) => {
                     tt(hn.args), A(Vi, {});
-                  }), $e(Fi);
+                  }), Ie(Fi);
                 });
               }),
               cancel: () => new Promise((ue) => {
@@ -2719,12 +2719,12 @@ is not a problem with esbuild. You need to fix your environment instead.
                 });
               })
             };
-            F.ref(), ke(null, me);
+            F.ref(), xe(null, me);
           });
         }
       }
       var Dt = (c, p, y, A, F, J, B, ie, O) => a(void 0, null, function* () {
-        let xe = [], ke = [], pe = {}, Oe = {}, ye = [], Ce = 0, De = 0, ae = [], He = !1;
+        let _e = [], xe = [], pe = {}, Oe = {}, ye = [], Ce = 0, De = 0, ae = [], He = !1;
         ie = [...ie];
         for (let z of ie) {
           let P = {};
@@ -2745,21 +2745,21 @@ is not a problem with esbuild. You need to fix your environment instead.
             De++;
             let M = T({
               initialOptions: B,
-              resolve: (S, $ = {}) => {
+              resolve: (S, I = {}) => {
                 if (!He) throw new Error('Cannot call "resolve" before plugin setup has completed');
                 if (typeof S != "string") throw new Error("The path to resolve must be a string");
-                let l = /* @__PURE__ */ Object.create(null), w = v($, l, "pluginName", D), I = v($, l, "importer", D), C = v($, l, "namespace", D), V = v($, l, "resolveDir", D), le = v($, l, "kind", D), me = v($, l, "pluginData", Ee), ue = v($, l, "with", K);
-                return ge($, l, "in resolve() call"), new Promise(($e, we) => {
-                  const Ie = {
+                let l = /* @__PURE__ */ Object.create(null), w = v(I, l, "pluginName", D), $ = v(I, l, "importer", D), C = v(I, l, "namespace", D), V = v(I, l, "resolveDir", D), le = v(I, l, "kind", D), me = v(I, l, "pluginData", Ee), ue = v(I, l, "with", K);
+                return ge(I, l, "in resolve() call"), new Promise((Ie, we) => {
+                  const $e = {
                     command: "resolve",
                     path: S,
                     key: c,
                     pluginName: b
                   };
-                  if (w != null && (Ie.pluginName = w), I != null && (Ie.importer = I), C != null && (Ie.namespace = C), V != null && (Ie.resolveDir = V), le != null) Ie.kind = le;
+                  if (w != null && ($e.pluginName = w), $ != null && ($e.importer = $), C != null && ($e.namespace = C), V != null && ($e.resolveDir = V), le != null) $e.kind = le;
                   else throw new Error('Must specify "kind" when calling "resolve"');
-                  me != null && (Ie.pluginData = O.store(me)), ue != null && (Ie.with = Fe(ue, "with")), p(A, Ie, (ut, Xe) => {
-                    ut !== null ? we(new Error(ut)) : $e({
+                  me != null && ($e.pluginData = O.store(me)), ue != null && ($e.with = Fe(ue, "with")), p(A, $e, (ut, Xe) => {
+                    ut !== null ? we(new Error(ut)) : Ie({
                       errors: Me(Xe.errors, O),
                       warnings: Me(Xe.warnings, O),
                       path: Xe.path,
@@ -2773,24 +2773,24 @@ is not a problem with esbuild. You need to fix your environment instead.
                 });
               },
               onStart(S) {
-                let $ = 'This error came from the "onStart" callback registered here:', l = At(new Error($), F, "onStart");
-                xe.push({ name: b, callback: S, note: l }), R.onStart = !0;
+                let I = 'This error came from the "onStart" callback registered here:', l = At(new Error(I), F, "onStart");
+                _e.push({ name: b, callback: S, note: l }), R.onStart = !0;
               },
               onEnd(S) {
-                let $ = 'This error came from the "onEnd" callback registered here:', l = At(new Error($), F, "onEnd");
-                ke.push({ name: b, callback: S, note: l }), R.onEnd = !0;
+                let I = 'This error came from the "onEnd" callback registered here:', l = At(new Error(I), F, "onEnd");
+                xe.push({ name: b, callback: S, note: l }), R.onEnd = !0;
               },
-              onResolve(S, $) {
-                let l = 'This error came from the "onResolve" callback registered here:', w = At(new Error(l), F, "onResolve"), I = {}, C = v(S, I, "filter", ve), V = v(S, I, "namespace", D);
-                if (ge(S, I, `in onResolve() call for plugin ${U(b)}`), C == null) throw new Error("onResolve() call is missing a filter");
+              onResolve(S, I) {
+                let l = 'This error came from the "onResolve" callback registered here:', w = At(new Error(l), F, "onResolve"), $ = {}, C = v(S, $, "filter", ve), V = v(S, $, "namespace", D);
+                if (ge(S, $, `in onResolve() call for plugin ${U(b)}`), C == null) throw new Error("onResolve() call is missing a filter");
                 let le = Ce++;
-                pe[le] = { name: b, callback: $, note: w }, R.onResolve.push({ id: le, filter: C.source, namespace: V || "" });
+                pe[le] = { name: b, callback: I, note: w }, R.onResolve.push({ id: le, filter: C.source, namespace: V || "" });
               },
-              onLoad(S, $) {
-                let l = 'This error came from the "onLoad" callback registered here:', w = At(new Error(l), F, "onLoad"), I = {}, C = v(S, I, "filter", ve), V = v(S, I, "namespace", D);
-                if (ge(S, I, `in onLoad() call for plugin ${U(b)}`), C == null) throw new Error("onLoad() call is missing a filter");
+              onLoad(S, I) {
+                let l = 'This error came from the "onLoad" callback registered here:', w = At(new Error(l), F, "onLoad"), $ = {}, C = v(S, $, "filter", ve), V = v(S, $, "namespace", D);
+                if (ge(S, $, `in onLoad() call for plugin ${U(b)}`), C == null) throw new Error("onLoad() call is missing a filter");
                 let le = Ce++;
-                Oe[le] = { name: b, callback: $, note: w }, R.onLoad.push({ id: le, filter: C.source, namespace: V || "" });
+                Oe[le] = { name: b, callback: I, note: w }, R.onLoad.push({ id: le, filter: C.source, namespace: V || "" });
               },
               onDispose(S) {
                 ye.push(S);
@@ -2805,13 +2805,13 @@ is not a problem with esbuild. You need to fix your environment instead.
         J["on-start"] = (z, P) => a(void 0, null, function* () {
           O.clear();
           let b = { errors: [], warnings: [] };
-          yield Promise.all(xe.map((T) => a(void 0, [T], function* ({ name: R, callback: _, note: M }) {
+          yield Promise.all(_e.map((T) => a(void 0, [T], function* ({ name: R, callback: _, note: M }) {
             try {
               let S = yield _();
               if (S != null) {
                 if (typeof S != "object") throw new Error(`Expected onStart() callback in plugin ${U(R)} to return an object`);
-                let $ = {}, l = v(S, $, "errors", Se), w = v(S, $, "warnings", Se);
-                ge(S, $, `from onStart() callback in plugin ${U(R)}`), l != null && b.errors.push(...qe(l, "errors", O, R, void 0)), w != null && b.warnings.push(...qe(w, "warnings", O, R, void 0));
+                let I = {}, l = v(S, I, "errors", Se), w = v(S, I, "warnings", Se);
+                ge(S, I, `from onStart() callback in plugin ${U(R)}`), l != null && b.errors.push(...qe(l, "errors", O, R, void 0)), w != null && b.warnings.push(...qe(w, "warnings", O, R, void 0));
               }
             } catch (S) {
               b.errors.push(mt(S, F, O, M && M(), R));
@@ -2833,8 +2833,8 @@ is not a problem with esbuild. You need to fix your environment instead.
               });
               if (S != null) {
                 if (typeof S != "object") throw new Error(`Expected onResolve() callback in plugin ${U(T)} to return an object`);
-                let $ = {}, l = v(S, $, "pluginName", D), w = v(S, $, "path", D), I = v(S, $, "namespace", D), C = v(S, $, "suffix", D), V = v(S, $, "external", Z), le = v(S, $, "sideEffects", Z), me = v(S, $, "pluginData", Ee), ue = v(S, $, "errors", Se), $e = v(S, $, "warnings", Se), we = v(S, $, "watchFiles", Se), Ie = v(S, $, "watchDirs", Se);
-                ge(S, $, `from onResolve() callback in plugin ${U(T)}`), b.id = M, l != null && (b.pluginName = l), w != null && (b.path = w), I != null && (b.namespace = I), C != null && (b.suffix = C), V != null && (b.external = V), le != null && (b.sideEffects = le), me != null && (b.pluginData = O.store(me)), ue != null && (b.errors = qe(ue, "errors", O, T, void 0)), $e != null && (b.warnings = qe($e, "warnings", O, T, void 0)), we != null && (b.watchFiles = Ke(we, "watchFiles")), Ie != null && (b.watchDirs = Ke(Ie, "watchDirs"));
+                let I = {}, l = v(S, I, "pluginName", D), w = v(S, I, "path", D), $ = v(S, I, "namespace", D), C = v(S, I, "suffix", D), V = v(S, I, "external", Z), le = v(S, I, "sideEffects", Z), me = v(S, I, "pluginData", Ee), ue = v(S, I, "errors", Se), Ie = v(S, I, "warnings", Se), we = v(S, I, "watchFiles", Se), $e = v(S, I, "watchDirs", Se);
+                ge(S, I, `from onResolve() callback in plugin ${U(T)}`), b.id = M, l != null && (b.pluginName = l), w != null && (b.path = w), $ != null && (b.namespace = $), C != null && (b.suffix = C), V != null && (b.external = V), le != null && (b.sideEffects = le), me != null && (b.pluginData = O.store(me)), ue != null && (b.errors = qe(ue, "errors", O, T, void 0)), Ie != null && (b.warnings = qe(Ie, "warnings", O, T, void 0)), we != null && (b.watchFiles = Ke(we, "watchFiles")), $e != null && (b.watchDirs = Ke($e, "watchDirs"));
                 break;
               }
             } catch (S) {
@@ -2856,8 +2856,8 @@ is not a problem with esbuild. You need to fix your environment instead.
               });
               if (S != null) {
                 if (typeof S != "object") throw new Error(`Expected onLoad() callback in plugin ${U(T)} to return an object`);
-                let $ = {}, l = v(S, $, "pluginName", D), w = v(S, $, "contents", Te), I = v(S, $, "resolveDir", D), C = v(S, $, "pluginData", Ee), V = v(S, $, "loader", D), le = v(S, $, "errors", Se), me = v(S, $, "warnings", Se), ue = v(S, $, "watchFiles", Se), $e = v(S, $, "watchDirs", Se);
-                ge(S, $, `from onLoad() callback in plugin ${U(T)}`), b.id = M, l != null && (b.pluginName = l), w instanceof Uint8Array ? b.contents = w : w != null && (b.contents = x(w)), I != null && (b.resolveDir = I), C != null && (b.pluginData = O.store(C)), V != null && (b.loader = V), le != null && (b.errors = qe(le, "errors", O, T, void 0)), me != null && (b.warnings = qe(me, "warnings", O, T, void 0)), ue != null && (b.watchFiles = Ke(ue, "watchFiles")), $e != null && (b.watchDirs = Ke($e, "watchDirs"));
+                let I = {}, l = v(S, I, "pluginName", D), w = v(S, I, "contents", Te), $ = v(S, I, "resolveDir", D), C = v(S, I, "pluginData", Ee), V = v(S, I, "loader", D), le = v(S, I, "errors", Se), me = v(S, I, "warnings", Se), ue = v(S, I, "watchFiles", Se), Ie = v(S, I, "watchDirs", Se);
+                ge(S, I, `from onLoad() callback in plugin ${U(T)}`), b.id = M, l != null && (b.pluginName = l), w instanceof Uint8Array ? b.contents = w : w != null && (b.contents = x(w)), $ != null && (b.resolveDir = $), C != null && (b.pluginData = O.store(C)), V != null && (b.loader = V), le != null && (b.errors = qe(le, "errors", O, T, void 0)), me != null && (b.warnings = qe(me, "warnings", O, T, void 0)), ue != null && (b.watchFiles = Ke(ue, "watchFiles")), Ie != null && (b.watchDirs = Ke(Ie, "watchDirs"));
                 break;
               }
             } catch (S) {
@@ -2867,17 +2867,17 @@ is not a problem with esbuild. You need to fix your environment instead.
           y(z, b);
         });
         let oe = (z, P) => P([], []);
-        ke.length > 0 && (oe = (z, P) => {
+        xe.length > 0 && (oe = (z, P) => {
           a(void 0, null, function* () {
             const b = [], T = [];
-            for (const { name: R, callback: _, note: M } of ke) {
-              let S, $;
+            for (const { name: R, callback: _, note: M } of xe) {
+              let S, I;
               try {
                 const l = yield _(z);
                 if (l != null) {
                   if (typeof l != "object") throw new Error(`Expected onEnd() callback in plugin ${U(R)} to return an object`);
-                  let w = {}, I = v(l, w, "errors", Se), C = v(l, w, "warnings", Se);
-                  ge(l, w, `from onEnd() callback in plugin ${U(R)}`), I != null && (S = qe(I, "errors", O, R, void 0)), C != null && ($ = qe(C, "warnings", O, R, void 0));
+                  let w = {}, $ = v(l, w, "errors", Se), C = v(l, w, "warnings", Se);
+                  ge(l, w, `from onEnd() callback in plugin ${U(R)}`), $ != null && (S = qe($, "errors", O, R, void 0)), C != null && (I = qe(C, "warnings", O, R, void 0));
                 }
               } catch (l) {
                 S = [mt(l, F, O, M && M(), R)];
@@ -2889,10 +2889,10 @@ is not a problem with esbuild. You need to fix your environment instead.
                 } catch {
                 }
               }
-              if ($) {
-                T.push(...$);
+              if (I) {
+                T.push(...I);
                 try {
-                  z.warnings.push(...$);
+                  z.warnings.push(...I);
                 } catch {
                 }
               }
@@ -2980,13 +2980,13 @@ is not a problem with esbuild. You need to fix your environment instead.
                   } catch {
                     break;
                   }
-                  let O = ie.split(/\r\n|\r|\n|\u2028|\u2029/)[+B[2] - 1] || "", xe = +B[3] - 1, ke = O.slice(xe, xe + y.length) === y ? y.length : 0;
+                  let O = ie.split(/\r\n|\r|\n|\u2028|\u2029/)[+B[2] - 1] || "", _e = +B[3] - 1, xe = O.slice(_e, _e + y.length) === y ? y.length : 0;
                   return {
                     file: B[1],
                     namespace: "file",
                     line: +B[2],
-                    column: x(O.slice(0, xe)).length,
-                    length: x(O.slice(xe, xe + ke)).length,
+                    column: x(O.slice(0, _e)).length,
+                    length: x(O.slice(_e, _e + xe)).length,
                     lineText: O + `
 ` + p.slice(1).join(`
 `),
@@ -3005,9 +3005,9 @@ is not a problem with esbuild. You need to fix your environment instead.
 ...`;
           if (!J.location) return `
 error: ${J.text}`;
-          let { file: ie, line: O, column: xe } = J.location, ke = J.pluginName ? `[plugin: ${J.pluginName}] ` : "";
+          let { file: ie, line: O, column: _e } = J.location, xe = J.pluginName ? `[plugin: ${J.pluginName}] ` : "";
           return `
-${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
+${ie}:${O}:${_e}: ERROR: ${xe}${J.text}`;
         }).join("");
         let F = new Error(c);
         for (const [J, B] of [["errors", p], ["warnings", y]])
@@ -3030,13 +3030,13 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
       }
       function et(c, p, y) {
         if (c == null) return null;
-        let A = {}, F = v(c, A, "file", D), J = v(c, A, "namespace", D), B = v(c, A, "line", ne), ie = v(c, A, "column", ne), O = v(c, A, "length", ne), xe = v(c, A, "lineText", D), ke = v(c, A, "suggestion", D);
-        if (ge(c, A, p), xe) {
-          const pe = xe.slice(
+        let A = {}, F = v(c, A, "file", D), J = v(c, A, "namespace", D), B = v(c, A, "line", ne), ie = v(c, A, "column", ne), O = v(c, A, "length", ne), _e = v(c, A, "lineText", D), xe = v(c, A, "suggestion", D);
+        if (ge(c, A, p), _e) {
+          const pe = _e.slice(
             0,
             (ie && ie > 0 ? ie : 0) + (O && O > 0 ? O : 0) + (y && y > 0 ? y : 80)
           );
-          !/[\x7F-\uFFFF]/.test(pe) && !/\n/.test(xe) && (xe = pe);
+          !/[\x7F-\uFFFF]/.test(pe) && !/\n/.test(_e) && (_e = pe);
         }
         return {
           file: F || "",
@@ -3044,14 +3044,14 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
           line: B || 0,
           column: ie || 0,
           length: O || 0,
-          lineText: xe || "",
-          suggestion: ke || ""
+          lineText: _e || "",
+          suggestion: xe || ""
         };
       }
       function qe(c, p, y, A, F) {
         let J = [], B = 0;
         for (const ie of c) {
-          let O = {}, xe = v(ie, O, "id", D), ke = v(ie, O, "pluginName", D), pe = v(ie, O, "text", D), Oe = v(ie, O, "location", j), ye = v(ie, O, "notes", Se), Ce = v(ie, O, "detail", Ee), De = `in element ${B} of "${p}"`;
+          let O = {}, _e = v(ie, O, "id", D), xe = v(ie, O, "pluginName", D), pe = v(ie, O, "text", D), Oe = v(ie, O, "location", j), ye = v(ie, O, "notes", Se), Ce = v(ie, O, "detail", Ee), De = `in element ${B} of "${p}"`;
           ge(ie, O, De);
           let ae = [];
           if (ye)
@@ -3063,8 +3063,8 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
               });
             }
           J.push({
-            id: xe || "",
-            pluginName: ke || A,
+            id: _e || "",
+            pluginName: xe || A,
             text: pe || "",
             location: et(Oe, De, F),
             notes: ae,
@@ -3104,7 +3104,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
       }
       var gt = "0.24.2", Oi = (c) => Qt().build(c), Kn = (c) => Qt().context(c), fn = (c, p) => Qt().transform(c, p), Mi = (c, p) => Qt().formatMessages(c, p), dn = (c, p) => Qt().analyzeMetafile(c, p), Ri = () => {
         throw new Error('The "buildSync" API only works in node');
-      }, $n = () => {
+      }, In = () => {
         throw new Error('The "transformSync" API only works in node');
       }, Ui = () => {
         throw new Error('The "formatMessagesSync" API only works in node');
@@ -3836,8 +3836,8 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       S(oe());
                       return;
                     }
-                    const $ = this.writeSync(b, T);
-                    S(null, $);
+                    const I = this.writeSync(b, T);
+                    S(null, I);
                   },
                   chmod(b, T, R) {
                     R(oe());
@@ -3956,16 +3956,16 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                   const P = (l, w) => {
                     this.mem.setUint32(l + 0, w, !0), this.mem.setUint32(l + 4, Math.floor(w / 4294967296), !0);
                   }, b = (l) => {
-                    const w = this.mem.getUint32(l + 0, !0), I = this.mem.getInt32(l + 4, !0);
-                    return w + I * 4294967296;
+                    const w = this.mem.getUint32(l + 0, !0), $ = this.mem.getInt32(l + 4, !0);
+                    return w + $ * 4294967296;
                   }, T = (l) => {
                     const w = this.mem.getFloat64(l, !0);
                     if (w === 0)
                       return;
                     if (!isNaN(w))
                       return w;
-                    const I = this.mem.getUint32(l, !0);
-                    return this._values[I];
+                    const $ = this.mem.getUint32(l, !0);
+                    return this._values[$];
                   }, R = (l, w) => {
                     if (typeof w == "number" && w !== 0) {
                       if (isNaN(w)) {
@@ -3998,17 +3998,17 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                     }
                     this.mem.setUint32(l + 4, 2146959360 | V, !0), this.mem.setUint32(l, C, !0);
                   }, _ = (l) => {
-                    const w = b(l + 0), I = b(l + 8);
-                    return new Uint8Array(this._inst.exports.mem.buffer, w, I);
+                    const w = b(l + 0), $ = b(l + 8);
+                    return new Uint8Array(this._inst.exports.mem.buffer, w, $);
                   }, M = (l) => {
-                    const w = b(l + 0), I = b(l + 8), C = new Array(I);
-                    for (let V = 0; V < I; V++)
+                    const w = b(l + 0), $ = b(l + 8), C = new Array($);
+                    for (let V = 0; V < $; V++)
                       C[V] = T(w + V * 8);
                     return C;
                   }, S = (l) => {
-                    const w = b(l + 0), I = b(l + 8);
-                    return z.decode(new DataView(this._inst.exports.mem.buffer, w, I));
-                  }, $ = Date.now() - performance.now();
+                    const w = b(l + 0), $ = b(l + 8);
+                    return z.decode(new DataView(this._inst.exports.mem.buffer, w, $));
+                  }, I = Date.now() - performance.now();
                   this.importObject = {
                     _gotest: {
                       add: (l, w) => l + w
@@ -4027,8 +4027,8 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       // func wasmWrite(fd uintptr, p unsafe.Pointer, n int32)
                       "runtime.wasmWrite": (l) => {
                         l >>>= 0;
-                        const w = b(l + 8), I = b(l + 16), C = this.mem.getInt32(l + 24, !0);
-                        ae.fs.writeSync(w, new Uint8Array(this._inst.exports.mem.buffer, I, C));
+                        const w = b(l + 8), $ = b(l + 16), C = this.mem.getInt32(l + 24, !0);
+                        ae.fs.writeSync(w, new Uint8Array(this._inst.exports.mem.buffer, $, C));
                       },
                       // func resetMemoryDataView()
                       "runtime.resetMemoryDataView": (l) => {
@@ -4036,7 +4036,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       },
                       // func nanotime1() int64
                       "runtime.nanotime1": (l) => {
-                        l >>>= 0, P(l + 8, ($ + performance.now()) * 1e6);
+                        l >>>= 0, P(l + 8, (I + performance.now()) * 1e6);
                       },
                       // func walltime() (sec int64, nsec int32)
                       "runtime.walltime": (l) => {
@@ -4071,8 +4071,8 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                         l >>>= 0;
                         const w = this.mem.getUint32(l + 8, !0);
                         if (this._goRefCounts[w]--, this._goRefCounts[w] === 0) {
-                          const I = this._values[w];
-                          this._values[w] = null, this._ids.delete(I), this._idPool.push(w);
+                          const $ = this._values[w];
+                          this._values[w] = null, this._ids.delete($), this._idPool.push(w);
                         }
                       },
                       // func stringVal(value string) ref
@@ -4105,7 +4105,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       "syscall/js.valueCall": (l) => {
                         l >>>= 0;
                         try {
-                          const w = T(l + 8), I = Reflect.get(w, S(l + 16)), C = M(l + 32), V = Reflect.apply(I, w, C);
+                          const w = T(l + 8), $ = Reflect.get(w, S(l + 16)), C = M(l + 32), V = Reflect.apply($, w, C);
                           l = this._inst.exports.getsp() >>> 0, R(l + 56, V), this.mem.setUint8(l + 64, 1);
                         } catch (w) {
                           l = this._inst.exports.getsp() >>> 0, R(l + 56, w), this.mem.setUint8(l + 64, 0);
@@ -4115,7 +4115,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       "syscall/js.valueInvoke": (l) => {
                         l >>>= 0;
                         try {
-                          const w = T(l + 8), I = M(l + 16), C = Reflect.apply(w, void 0, I);
+                          const w = T(l + 8), $ = M(l + 16), C = Reflect.apply(w, void 0, $);
                           l = this._inst.exports.getsp() >>> 0, R(l + 40, C), this.mem.setUint8(l + 48, 1);
                         } catch (w) {
                           l = this._inst.exports.getsp() >>> 0, R(l + 40, w), this.mem.setUint8(l + 48, 0);
@@ -4125,7 +4125,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       "syscall/js.valueNew": (l) => {
                         l >>>= 0;
                         try {
-                          const w = T(l + 8), I = M(l + 16), C = Reflect.construct(w, I);
+                          const w = T(l + 8), $ = M(l + 16), C = Reflect.construct(w, $);
                           l = this._inst.exports.getsp() >>> 0, R(l + 40, C), this.mem.setUint8(l + 48, 1);
                         } catch (w) {
                           l = this._inst.exports.getsp() >>> 0, R(l + 40, w), this.mem.setUint8(l + 48, 0);
@@ -4154,23 +4154,23 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                       // func copyBytesToGo(dst []byte, src ref) (int, bool)
                       "syscall/js.copyBytesToGo": (l) => {
                         l >>>= 0;
-                        const w = _(l + 8), I = T(l + 32);
-                        if (!(I instanceof Uint8Array || I instanceof Uint8ClampedArray)) {
+                        const w = _(l + 8), $ = T(l + 32);
+                        if (!($ instanceof Uint8Array || $ instanceof Uint8ClampedArray)) {
                           this.mem.setUint8(l + 48, 0);
                           return;
                         }
-                        const C = I.subarray(0, w.length);
+                        const C = $.subarray(0, w.length);
                         w.set(C), P(l + 40, C.length), this.mem.setUint8(l + 48, 1);
                       },
                       // func copyBytesToJS(dst ref, src []byte) (int, bool)
                       "syscall/js.copyBytesToJS": (l) => {
                         l >>>= 0;
-                        const w = T(l + 8), I = _(l + 16);
+                        const w = T(l + 8), $ = _(l + 16);
                         if (!(w instanceof Uint8Array || w instanceof Uint8ClampedArray)) {
                           this.mem.setUint8(l + 48, 0);
                           return;
                         }
-                        const C = I.subarray(0, w.length);
+                        const C = $.subarray(0, w.length);
                         w.set(C), P(l + 40, C.length), this.mem.setUint8(l + 48, 1);
                       },
                       debug: (l) => {
@@ -4203,8 +4203,8 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                     ]), this._idPool = [], this.exited = !1;
                     let b = 4096;
                     const T = (l) => {
-                      const w = b, I = se.encode(l + "\0");
-                      return new Uint8Array(this.mem.buffer, b, I.length).set(I), b += I.length, b % 8 !== 0 && (b += 8 - b % 8), w;
+                      const w = b, $ = se.encode(l + "\0");
+                      return new Uint8Array(this.mem.buffer, b, $.length).set($), b += $.length, b % 8 !== 0 && (b += 8 - b % 8), w;
                     }, R = this.argv.length, _ = [];
                     this.argv.forEach((l) => {
                       _.push(T(l));
@@ -4239,24 +4239,24 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
                   ye(S);
                 else if (M === 2) {
                   P += se.decode(S);
-                  let $ = P.split(`
+                  let I = P.split(`
 `);
-                  $.length > 1 && console.log($.slice(0, -1).join(`
-`)), P = $[$.length - 1];
+                  I.length > 1 && console.log(I.slice(0, -1).join(`
+`)), P = I[I.length - 1];
                 } else
                   throw new Error("Bad write");
                 return S.length;
               };
               let b = [], T, R = 0;
-              De = ({ data: M }) => (M.length > 0 && (b.push(M), T && T()), _), z.read = (M, S, $, l, w, I) => {
-                if (M !== 0 || $ !== 0 || l !== S.length || w !== null)
+              De = ({ data: M }) => (M.length > 0 && (b.push(M), T && T()), _), z.read = (M, S, I, l, w, $) => {
+                if (M !== 0 || I !== 0 || l !== S.length || w !== null)
                   throw new Error("Bad read");
                 if (b.length === 0) {
-                  T = () => z.read(M, S, $, l, w, I);
+                  T = () => z.read(M, S, I, l, w, $);
                   return;
                 }
                 let C = b[0], V = Math.max(0, Math.min(l, C.length - R));
-                S.set(C.subarray(R, R + V), $), R += V, R === C.length && (b.shift(), R = 0), I(null, V);
+                S.set(C.subarray(R, R + V), I), R += V, R === C.length && (b.shift(), R = 0), $(null, V);
               };
               let _ = new ae.Go();
               return _.argv = ["", "--service=0.24.2"], He(oe, _).then(
@@ -4303,9 +4303,9 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
           B = pe, ie = Oe;
         });
         A.onmessage = ({ data: pe }) => {
-          A.onmessage = ({ data: Oe }) => xe(Oe), pe ? ie(pe) : B();
+          A.onmessage = ({ data: Oe }) => _e(Oe), pe ? ie(pe) : B();
         }, A.postMessage(p || new URL(c, location.href).toString());
-        let { readFromStdout: xe, service: ke } = Ge({
+        let { readFromStdout: _e, service: xe } = Ge({
           writeToStdin(pe) {
             A.postMessage(pe);
           },
@@ -4317,7 +4317,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
           A.terminate(), Bt = void 0, Xt = void 0, tn = void 0;
         }, tn = {
           build: (pe) => new Promise((Oe, ye) => {
-            J.then(ye), ke.buildOrContext({
+            J.then(ye), xe.buildOrContext({
               callName: "build",
               refs: null,
               options: pe,
@@ -4327,7 +4327,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
             });
           }),
           context: (pe) => new Promise((Oe, ye) => {
-            J.then(ye), ke.buildOrContext({
+            J.then(ye), xe.buildOrContext({
               callName: "context",
               refs: null,
               options: pe,
@@ -4337,7 +4337,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
             });
           }),
           transform: (pe, Oe) => new Promise((ye, Ce) => {
-            J.then(Ce), ke.transform({
+            J.then(Ce), xe.transform({
               callName: "transform",
               refs: null,
               input: pe,
@@ -4355,7 +4355,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
             });
           }),
           formatMessages: (pe, Oe) => new Promise((ye, Ce) => {
-            J.then(Ce), ke.formatMessages({
+            J.then(Ce), xe.formatMessages({
               callName: "formatMessages",
               refs: null,
               messages: pe,
@@ -4364,7 +4364,7 @@ ${ie}:${O}:${xe}: ERROR: ${ke}${J.text}`;
             });
           }),
           analyzeMetafile: (pe, Oe) => new Promise((ye, Ce) => {
-            J.then(Ce), ke.analyzeMetafile({
+            J.then(Ce), xe.analyzeMetafile({
               callName: "analyzeMetafile",
               refs: null,
               metafile: typeof pe == "string" ? pe : JSON.stringify(pe),
@@ -5161,7 +5161,7 @@ Nhớ chọn thêm Dịch vụ cần thiết. Đính kèm ảnh mô tả hoặc 
 - Thả API của bạn (curl, python requests, javascript fetch, ...) vào chat để Coder Agent sử dụng.`
   }
 }, ys = gs("en");
-function $l(e, t, n) {
+function Il(e, t, n) {
   let i = Al[e][t];
   if (!i) throw new Error(`no translation found for ${e}.${t}`);
   return Object.keys(n).map((r) => {
@@ -5171,8 +5171,8 @@ function $l(e, t, n) {
 }
 const Gn = ul(
   ys,
-  (e) => (t, n = {}) => $l(e, t, n)
-), Il = async ({ model: e, messages: t }) => (await (await fetch(globalThis._DOMINI_BASE_URL + "/chat/completions", {
+  (e) => (t, n = {}) => Il(e, t, n)
+), $l = async ({ model: e, messages: t }) => (await (await fetch(globalThis._DOMINI_BASE_URL + "/chat/completions", {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -5184,7 +5184,7 @@ const Gn = ul(
     temperature: 0,
     stream: !1
   })
-})).json()).choices[0].message.content, Pl = (e, t) => Il({
+})).json()).choices[0].message.content, Pl = (e, t) => $l({
   model: globalThis._DOMINI_VISON_MODEL ?? "Qwen/Qwen2-VL-72B-Instruct",
   messages: [
     {
@@ -5795,7 +5795,7 @@ const mc = function(e) {
   x: e,
   y: e
 });
-function $i() {
+function Ii() {
   return typeof window < "u";
 }
 function An(e) {
@@ -5810,16 +5810,16 @@ function Kt(e) {
   return (t = (Ts(e) ? e.ownerDocument : e.document) || window.document) == null ? void 0 : t.documentElement;
 }
 function Ts(e) {
-  return $i() ? e instanceof Node || e instanceof bt(e).Node : !1;
+  return Ii() ? e instanceof Node || e instanceof bt(e).Node : !1;
 }
 function Tt(e) {
-  return $i() ? e instanceof Element || e instanceof bt(e).Element : !1;
+  return Ii() ? e instanceof Element || e instanceof bt(e).Element : !1;
 }
 function Ut(e) {
-  return $i() ? e instanceof HTMLElement || e instanceof bt(e).HTMLElement : !1;
+  return Ii() ? e instanceof HTMLElement || e instanceof bt(e).HTMLElement : !1;
 }
 function go(e) {
-  return !$i() || typeof ShadowRoot > "u" ? !1 : e instanceof ShadowRoot || e instanceof bt(e).ShadowRoot;
+  return !Ii() || typeof ShadowRoot > "u" ? !1 : e instanceof ShadowRoot || e instanceof bt(e).ShadowRoot;
 }
 function Jn(e) {
   const {
@@ -5833,7 +5833,7 @@ function Jn(e) {
 function gc(e) {
   return ["table", "td", "th"].includes(An(e));
 }
-function Ii(e) {
+function $i(e) {
   return [":popover-open", ":modal"].some((t) => {
     try {
       return e.matches(t);
@@ -5851,7 +5851,7 @@ function vc(e) {
   for (; Ut(t) && !Sn(t); ) {
     if (Br(t))
       return t;
-    if (Ii(t))
+    if ($i(t))
       return null;
     t = en(t);
   }
@@ -5933,7 +5933,7 @@ function wn(e) {
   };
 }
 const yc = /* @__PURE__ */ Mt(0);
-function $s(e) {
+function Is(e) {
   const t = bt(e);
   return !Lr() || !t.visualViewport ? yc : {
     x: t.visualViewport.offsetLeft,
@@ -5948,7 +5948,7 @@ function Bn(e, t, n, i) {
   const r = e.getBoundingClientRect(), o = As(e);
   let s = Mt(1);
   t && (i ? Tt(i) && (s = wn(i)) : s = wn(e));
-  const u = bc(o, n, i) ? $s(o) : Mt(0);
+  const u = bc(o, n, i) ? Is(o) : Mt(0);
   let d = (r.left + u.x) / s.x, a = (r.top + u.y) / s.y, h = r.width / s.x, f = r.height / s.y;
   if (o) {
     const m = bt(o), g = i && Tt(i) ? bt(i) : i;
@@ -5969,7 +5969,7 @@ function Fr(e, t) {
   const n = Pi(e).scrollLeft;
   return t ? t.left + n : Bn(Kt(e)).left + n;
 }
-function Is(e, t, n) {
+function $s(e, t, n) {
   n === void 0 && (n = !1);
   const i = e.getBoundingClientRect(), r = i.left + t.scrollLeft - (n ? 0 : (
     // RTL <body> scrollbar.
@@ -5987,7 +5987,7 @@ function wc(e) {
     offsetParent: i,
     strategy: r
   } = e;
-  const o = r === "fixed", s = Kt(i), u = t ? Ii(t.floating) : !1;
+  const o = r === "fixed", s = Kt(i), u = t ? $i(t.floating) : !1;
   if (i === s || u && o)
     return n;
   let d = {
@@ -5999,7 +5999,7 @@ function wc(e) {
     const g = Bn(i);
     a = wn(i), h.x = g.x + i.clientLeft, h.y = g.y + i.clientTop;
   }
-  const m = s && !f && !o ? Is(s, d, !0) : Mt(0);
+  const m = s && !f && !o ? $s(s, d, !0) : Mt(0);
   return {
     width: n.width * a.x,
     height: n.height * a.y,
@@ -6054,7 +6054,7 @@ function vo(e, t, n) {
   else if (Tt(t))
     i = Sc(t, n);
   else {
-    const r = $s(e);
+    const r = Is(e);
     i = {
       x: t.x - r.x,
       y: t.y - r.y,
@@ -6088,7 +6088,7 @@ function Tc(e) {
     rootBoundary: i,
     strategy: r
   } = e;
-  const s = [...n === "clippingAncestors" ? Ii(t) ? [] : Ec(t, this._c) : [].concat(n), i], u = s[0], d = s.reduce((a, h) => {
+  const s = [...n === "clippingAncestors" ? $i(t) ? [] : Ec(t, this._c) : [].concat(n), i], u = s[0], d = s.reduce((a, h) => {
     const f = vo(t, h, r);
     return a.top = On(f.top, a.top), a.right = mo(f.right, a.right), a.bottom = mo(f.bottom, a.bottom), a.left = On(f.left, a.left), a;
   }, vo(t, u, r));
@@ -6121,7 +6121,7 @@ function Dc(e, t, n) {
       const m = Bn(t, !0, o, t);
       d.x = m.x + t.clientLeft, d.y = m.y + t.clientTop;
     } else r && (d.x = Fr(r));
-  const a = r && !i && !o ? Is(r, u) : Mt(0), h = s.left + u.scrollLeft - d.x - a.x, f = s.top + u.scrollTop - d.y - a.y;
+  const a = r && !i && !o ? $s(r, u) : Mt(0), h = s.left + u.scrollLeft - d.x - a.x, f = s.top + u.scrollTop - d.y - a.y;
   return {
     x: h,
     y: f,
@@ -6142,7 +6142,7 @@ function yo(e, t) {
 }
 function Os(e, t) {
   const n = bt(e);
-  if (Ii(e))
+  if ($i(e))
     return n;
   if (!Ut(e)) {
     let r = en(e);
@@ -6170,10 +6170,10 @@ const Ac = async function(e) {
     }
   };
 };
-function $c(e) {
+function Ic(e) {
   return Ct(e).direction === "rtl";
 }
-const Ic = {
+const $c = {
   convertOffsetParentRelativeRectToViewportRelativeRect: wc,
   getDocumentElement: Kt,
   getClippingRect: Tc,
@@ -6183,10 +6183,10 @@ const Ic = {
   getDimensions: Cc,
   getScale: wn,
   isElement: Tt,
-  isRTL: $c
+  isRTL: Ic
 }, Pc = mc, Oc = hc, Mc = (e, t, n) => {
   const i = /* @__PURE__ */ new Map(), r = {
-    platform: Ic,
+    platform: $c,
     ...n
   }, o = {
     ...r.platform,
@@ -6650,11 +6650,6 @@ function Qc(e, t) {
   }), Jt(), i();
 }
 zn(["click"]);
-_e({
-  hasChangedName: !1,
-  user: null,
-  exchangeRate: 25e3
-});
 var tr = { dragStart: !0 }, nr = { delay: 0, distance: 3 }, wo = (e, t, n) => Math.min(Math.max(e, t), n), ir = (e) => typeof e == "string", Zc = ([e, t], n, i) => {
   const r = (o, s) => s === 0 ? 0 : Math.ceil(o / s) * s;
   return [r(n, e), r(i, t)];
@@ -6809,7 +6804,7 @@ function xo(e, t) {
     // "text_to_speech",
     // "speech_to_text",
     // "synthesize",
-    "hyberbolic"
+    ...globalThis._DOMINI_PROVIDER_SERVICES ?? []
   ];
   function d(m) {
     let g = t.selected.indexOf(m);
@@ -6852,7 +6847,7 @@ function xo(e, t) {
       return k(s);
     },
     set show(m) {
-      Y(s, _e(m));
+      Y(s, ke(m));
     }
   }), Ae(e, a), Jt(), i();
 }
@@ -7061,7 +7056,7 @@ import App from './App.jsx';
 
 const domNode = document.getElementById('root');
 const root = createRoot(domNode);
-root.render(<App />);`, br = _e({
+root.render(<App />);`, br = ke({
   appId: null,
   pricing: null,
   membership: null,
@@ -7085,13 +7080,13 @@ const yu = (e, t, n, i) => {
 function bu(e, t, n, i) {
   Ql(k(t).url), n(i()("ui.share-copied"), { type: "success" });
 }
-var wu = /* @__PURE__ */ Re('<i class="sidebar-on sidebar-toggled"></i>'), _u = /* @__PURE__ */ Re('<i class="sidebar-off"></i>'), xu = /* @__PURE__ */ Re('<button class="action sidebar-toggle with-tip" aria-label="Toggle sidebar"><!> <div class="tip-text"> </div></button>'), ku = (e, t) => t("view-idea"), Su = (e, t) => t("view-code"), Eu = (e, t) => t("view-app"), Tu = /* @__PURE__ */ Re('<button><i class="share"></i> </button>'), Cu = (e, t) => t("desktop"), Du = (e, t) => t("mobile"), Au = /* @__PURE__ */ Re('<div class="selector"><button aria-label="Desktop"><i class="laptop"></i></button> <button aria-label="Mobile"><i class="phone"></i></button></div>'), $u = /* @__PURE__ */ Re("<!> <!>", 1), Iu = /* @__PURE__ */ Re('<button><i class="image-clear"></i> </button>'), Pu = /* @__PURE__ */ Re('<button><i class="image-upload"></i> </button>'), Ou = /* @__PURE__ */ Re("<span> </span>"), Mu = /* @__PURE__ */ Re('<li><button><i class="file"></i> </button></li>'), Ru = /* @__PURE__ */ Re('<button class="smol" aria-label="Stop"><i class="stop spin"></i></button>'), Uu = /* @__PURE__ */ Re('<i class="image-clear"></i> <span class="tip-text"> </span>', 1), Nu = /* @__PURE__ */ Re('<i class="image-upload"></i> <span class="tip-text"> </span>', 1), ju = /* @__PURE__ */ Re('<div class="flex gap-2"><button class="smol with-tip top hover:text-blue-1 text-blue-5" aria-label="Send"><i class="send"></i> <span class="tip-text"> </span></button> <button class="smol with-tip top" aria-label="Attach images"><!></button> <!></div>'), Bu = /* @__PURE__ */ Re('<div class="flex flex-col gap-2"><textarea id="chat-prompt" class="chat"></textarea> <div class="flex items-center justify-between"><!> <div class="flex gap-2"><button class="smol with-tip top-end" aria-label="Debug"><i class="bug"></i> <span class="tip-text"> </span></button> <!></div></div></div>'), Lu = /* @__PURE__ */ Re('<aside class="flex flex-col gap-2"><!> <ul id="filetree"></ul> <button id="stop-button"><i class="stop spin"></i> </button> <!></aside>'), Fu = /* @__PURE__ */ Re('<div class="domini-playground"><header><div class="flex gap-2"><!></div> <div class="selector"><button class="tab-btn"><i class="idea"></i> </button> <button class="tab-btn"><i class="code"></i> </button> <button class="tab-btn"><i class="app"></i> </button></div> <div class="flex items-center gap-2"><!></div></header> <section id="view-idea"><img src="/mascot.png" alt="Domini" class="banner"> <div class="flex gap-2 badges" style="flex-wrap: wrap;"><span class="badge current"> </span> <span class="badge"> </span> <span class="badge"> </span></div> <div id="form-starter"><div class="flex flex-col gap-2"><textarea id="prompt"></textarea> <div class="controls"><button id="make"><i class="magic"></i> <kbd> </kbd></button> <div class="flex gap-2"><!> <!></div></div></div></div> <!></section> <section id="view-app"><div><!> <div id="code-editor"></div> <div id="app-viewer"><!> <iframe title="Domini App" allow="camera; microphone; clipboard-read; clipboard-write"></iframe></div></div></section> <input type="file" accept="image/*" multiple hidden></div>');
+var wu = /* @__PURE__ */ Re('<i class="sidebar-on sidebar-toggled"></i>'), _u = /* @__PURE__ */ Re('<i class="sidebar-off"></i>'), xu = /* @__PURE__ */ Re('<button class="action sidebar-toggle with-tip" aria-label="Toggle sidebar"><!> <div class="tip-text"> </div></button>'), ku = (e, t) => t("view-idea"), Su = (e, t) => t("view-code"), Eu = (e, t) => t("view-app"), Tu = /* @__PURE__ */ Re('<button><i class="share"></i> </button>'), Cu = (e, t) => t("desktop"), Du = (e, t) => t("mobile"), Au = /* @__PURE__ */ Re('<div class="selector"><button aria-label="Desktop"><i class="laptop"></i></button> <button aria-label="Mobile"><i class="phone"></i></button></div>'), Iu = /* @__PURE__ */ Re("<!> <!>", 1), $u = /* @__PURE__ */ Re('<button><i class="image-clear"></i> </button>'), Pu = /* @__PURE__ */ Re('<button><i class="image-upload"></i> </button>'), Ou = /* @__PURE__ */ Re("<span> </span>"), Mu = /* @__PURE__ */ Re('<li><button><i class="file"></i> </button></li>'), Ru = /* @__PURE__ */ Re('<button class="smol" aria-label="Stop"><i class="stop spin"></i></button>'), Uu = /* @__PURE__ */ Re('<i class="image-clear"></i> <span class="tip-text"> </span>', 1), Nu = /* @__PURE__ */ Re('<i class="image-upload"></i> <span class="tip-text"> </span>', 1), ju = /* @__PURE__ */ Re('<div class="flex gap-2"><button class="smol with-tip top hover:text-blue-1 text-blue-5" aria-label="Send"><i class="send"></i> <span class="tip-text"> </span></button> <button class="smol with-tip top" aria-label="Attach images"><!></button> <!></div>'), Bu = /* @__PURE__ */ Re('<div class="flex flex-col gap-2"><textarea id="chat-prompt" class="chat"></textarea> <div class="flex items-center justify-between"><!> <div class="flex gap-2"><button class="smol with-tip top-end" aria-label="Debug"><i class="bug"></i> <span class="tip-text"> </span></button> <!></div></div></div>'), Lu = /* @__PURE__ */ Re('<aside class="flex flex-col gap-2"><!> <ul id="filetree"></ul> <button id="stop-button"><i class="stop spin"></i> </button> <!></aside>'), Fu = /* @__PURE__ */ Re('<div class="domini-playground"><header><div class="flex gap-2"><!></div> <div class="selector"><button class="tab-btn"><i class="idea"></i> </button> <button class="tab-btn"><i class="code"></i> </button> <button class="tab-btn"><i class="app"></i> </button></div> <div class="flex items-center gap-2"><!></div></header> <section id="view-idea"><img src="/mascot.png" alt="Domini" class="banner"> <div class="flex gap-2 badges" style="flex-wrap: wrap;"><span class="badge current"> </span> <span class="badge"> </span> <span class="badge"> </span></div> <div id="form-starter"><div class="flex flex-col gap-2"><textarea id="prompt"></textarea> <div class="controls"><button id="make"><i class="magic"></i> <kbd> </kbd></button> <div class="flex gap-2"><!> <!></div></div></div></div> <!></section> <section id="view-app"><div><!> <div id="code-editor"></div> <div id="app-viewer"><!> <iframe title="Domini App" allow="camera; microphone; clipboard-read; clipboard-write"></iframe></div></div></section> <input type="file" accept="image/*" multiple hidden></div>');
 function Vu(e, t) {
   Gt(t, !0);
   const [n, i] = Yn(), r = () => Hn(Gn, "$t", n);
   let o = !!navigator.userAgent.match(/(iPhone|Android)/i) || window.innerWidth < 768;
   ys.set(Kl());
-  let s = ja("toast"), u = _e(navigator.userAgent.includes("(Mac") ? "⌘+Enter" : "Ctrl+Enter"), d = Ue("page-studio"), a = Ue("view-idea"), h = Ue(!o), f = Ue(!0), m = Ue(!0), g = Ue(!1), x = Ue("desktop"), E = Ue(""), L = Ue(_e([])), q = Ue(""), X = Ue(""), U = Ue(!1), Q = Ue(0), G = Ue(_e([Date.now()])), ee = {}, Ee = Ue(!1), Z = Ue(!1), D = Ue(""), ve = !1, ne = {}, be;
+  let s = ja("toast"), u = ke(navigator.userAgent.includes("(Mac") ? "⌘+Enter" : "Ctrl+Enter"), d = Ue("page-studio"), a = Ue("view-idea"), h = Ue(!o), f = Ue(!0), m = Ue(!0), g = Ue(!1), x = Ue("desktop"), E = Ue(""), L = Ue(ke([])), q = Ue(""), X = Ue(""), U = Ue(!1), Q = Ue(0), G = Ue(ke([Date.now()])), ee = {}, Ee = Ue(!1), Z = Ue(!1), D = Ue(""), ve = !1, ne = {}, be;
   function Se() {
     require.config({
       paths: {
@@ -7130,11 +7125,11 @@ function Vu(e, t) {
     Se(), document.getElementById("prompt").focus();
   });
   function K(_) {
-    Y(a, _e(_)), _ == "view-app" && k(Ee) && k(Z) && fe();
+    Y(a, ke(_)), _ == "view-app" && k(Ee) && k(Z) && fe();
   }
-  let H = _e([]), N = Ue(""), j = Ue(_e({}));
+  let H = ke([]), N = Ue(""), j = Ue(ke({}));
   function W() {
-    Y(N, _e(Date.now().toString())), Y(j, _e({
+    Y(N, ke(Date.now().toString())), Y(j, ke({
       id: k(N),
       name: "Untitled",
       description: "",
@@ -7158,12 +7153,12 @@ function Vu(e, t) {
       category: k(j).category
     }, H.push(_)), ko("project-list", fo(H));
   }
-  let de = Ue(_e([]));
+  let de = Ue(ke([]));
   function Te(_) {
-    k(de).includes(_) || k(de).push(_), ve || Y(D, _e(_));
+    k(de).includes(_) || k(de).push(_), ve || Y(D, ke(_));
   }
   function Pe(_) {
-    _.preventDefault(), Y(a, "view-code"), ve = !0, Y(D, _e(_.target.textContent.trim())), monaco.editor.setModelLanguage(be.getModel(), k(D).endsWith(".md") ? "markdown" : k(D).endsWith(".json") ? "json" : "javascript"), be.setValue(ne[k(D)]);
+    _.preventDefault(), Y(a, "view-code"), ve = !0, Y(D, ke(_.target.textContent.trim())), monaco.editor.setModelLanguage(be.getModel(), k(D).endsWith(".md") ? "markdown" : k(D).endsWith(".json") ? "json" : "javascript"), be.setValue(ne[k(D)]);
   }
   let v, ge = [];
   async function nt(_) {
@@ -7179,8 +7174,8 @@ function Vu(e, t) {
   async function Qe() {
     let _ = k(q).trim();
     if (!_) return;
-    if (W(), ve = !1, Y(Ee, !1), Y(Z, !1), Y(m, !0), Y(g, !1), Ne.src = "", Y(de, _e([])), ne = {}, be.updateOptions({ readOnly: !0 }), be.setValue(""), Y(d, "page-studio"), Y(a, "view-code"), Y(f, !1), k(U)) {
-      Y(E, _e(r()("domini.analysingImages")));
+    if (W(), ve = !1, Y(Ee, !1), Y(Z, !1), Y(m, !0), Y(g, !1), Ne.src = "", Y(de, ke([])), ne = {}, be.updateOptions({ readOnly: !0 }), be.setValue(""), Y(d, "page-studio"), Y(a, "view-code"), Y(f, !1), k(U)) {
+      Y(E, ke(r()("domini.analysingImages")));
       let C = await lo(globalThis._DOMINI_PROMPT_DESCRIBE ?? So, ge);
       if (C != null && C.length)
         for (let V = 0; V < C.length; V++) {
@@ -7191,7 +7186,7 @@ function Vu(e, t) {
 ${C[V]}</${le}>`;
         }
     }
-    Y(E, _e(r()("domini.planning")));
+    Y(E, ke(r()("domini.planning")));
     let M = `<features_requested>
 ` + _ + `
 </features_requested>`;
@@ -7208,8 +7203,8 @@ ${C[V]}</${le}>`;
 `, M += `</api_docs>
 `;
     }
-    const S = document.querySelector("#stop-button"), $ = new AbortController(), l = () => {
-      $.abort(), Y(f, !0), S.removeEventListener("click", l);
+    const S = document.querySelector("#stop-button"), I = new AbortController(), l = () => {
+      I.abort(), Y(f, !0), S.removeEventListener("click", l);
     };
     S.addEventListener("click", l), Be = [
       {
@@ -7221,22 +7216,22 @@ ${C[V]}</${le}>`;
         content: (globalThis._DOMINI_PROMPT_REQUEST ?? du).replace("TO_BE_REPLACED", M)
       }
     ];
-    const w = await so(Be, $);
-    Y(E, _e(r()("domini.thinking")));
-    const I = await ao({
+    const w = await so(Be, I);
+    Y(E, ke(r()("domini.thinking")));
+    const $ = await ao({
       fetcher: w,
       onUpdate: (C, V, le) => {
         if (C == "newFile")
-          Te(V), ve || (Y(D, _e(V)), be.setValue(""));
+          Te(V), ve || (Y(D, ke(V)), be.setValue(""));
         else {
           if (!V && !k(D))
             return be.setValue(le);
-          k(D) == V && be.setValue(le), ne[V] = le, Y(E, _e(r()("domini.writingCode")));
+          k(D) == V && be.setValue(le), ne[V] = le, Y(E, ke(r()("domini.writingCode")));
         }
       }
     });
-    if (I.ok) {
-      if (Be.push({ role: "assistant", content: I.text }), ne = I.fileContents, ne["/index.jsx"] || (ne["/index.jsx"] = pu, k(de).push("/index.jsx")), Y(a, "view-app"), await fe(), Eo(k(N)), Y(Q, _e(Date.now())), Y(G, _e([k(Q)])), ee = {
+    if ($.ok) {
+      if (Be.push({ role: "assistant", content: $.text }), ne = $.fileContents, ne["/index.jsx"] || (ne["/index.jsx"] = pu, k(de).push("/index.jsx")), Y(a, "view-app"), await fe(), Eo(k(N)), Y(Q, ke(Date.now())), Y(G, ke([k(Q)])), ee = {
         [k(Q)]: { fileContents: ne, messages: Be }
       }, Y(m, !1), Y(Ee, !0), be.updateOptions({ readOnly: !1 }), ge = [], Y(U, !1), ne["/package.json"]) {
         let C = JSON.parse(ne["/package.json"]);
@@ -7244,7 +7239,7 @@ ${C[V]}</${le}>`;
       }
       ce();
     } else
-      be.setValue("Error: " + I.error);
+      be.setValue("Error: " + $.error);
     S.removeEventListener("click", l), Y(f, !0);
   }
   let Ze = Ue(!1), Ge = Ue(""), rt = Ue(!1), Dt;
@@ -7253,16 +7248,16 @@ ${C[V]}</${le}>`;
     if (!_) return;
     if (Y(rt, !0), ve = !1, Y(Ge, ""), be.updateOptions({ readOnly: !0 }), k(L).length) {
       let w = [];
-      for (let I of k(L))
-        k(j).services.includes(I) || (w.push(I), k(j).services.push(I));
+      for (let $ of k(L))
+        k(j).services.includes($) || (w.push($), k(j).services.push($));
       if (w.length) {
         _ += `
 
 <api_docs>
 `;
-        let I = await ho();
+        let $ = await ho();
         for (let C of w)
-          _ += I[C] + `
+          _ += $[C] + `
 `;
         _ += `</api_docs>
 `;
@@ -7270,7 +7265,7 @@ ${C[V]}</${le}>`;
     }
     let M = [];
     if (k(Ze)) {
-      Y(E, _e(r()("domini.analysingImages")));
+      Y(E, ke(r()("domini.analysingImages")));
       let w = await lo(globalThis._DOMINI_PROMPT_DESCRIBE ?? So, ge);
       w != null && w.length && M.push(...w);
     }
@@ -7279,21 +7274,21 @@ ${C[V]}</${le}>`;
 
 Pay more attention to annotations and additional notes.`;
       for (let w = 0; w < M.length; w++) {
-        let I = `ui_or_mockup_screenshot_caption_${w + 1}`;
+        let $ = `ui_or_mockup_screenshot_caption_${w + 1}`;
         _ += `
 
-<${I}>
+<${$}>
 ${M[w]}
-</${I}>`;
+</${$}>`;
       }
     }
     Dt = new AbortController(), Y(Ee, !1), Y(D, "");
     let S = Be[2].content.slice(0, Be[2].content.indexOf("<file_sep:")).trim();
-    for (let [w, I] of Object.entries(ne))
+    for (let [w, $] of Object.entries(ne))
       S += `
 
 [file_sep: ${w.slice(1)}]
-${I}`;
+${$}`;
     Be[2].content = S, ne = { ...ne }, Be = Be.concat({
       role: "user",
       content: (globalThis._DOMINI_PROMPT_IMPROVE ?? hu) + `
@@ -7302,21 +7297,21 @@ ${I}`;
 ` + _ + `
 </improvement_request>`
     });
-    const $ = await so(Be, Dt);
-    Y(E, _e(r()("domini.thinking")));
+    const I = await so(Be, Dt);
+    Y(E, ke(r()("domini.thinking")));
     const l = await ao({
-      fetcher: $,
-      onUpdate: (w, I, C) => {
+      fetcher: I,
+      onUpdate: (w, $, C) => {
         if (w == "newFile")
-          Te(I), ve || (Y(D, _e(I)), be.setValue(""));
+          Te($), ve || (Y(D, ke($)), be.setValue(""));
         else {
-          if (!I && !k(D))
+          if (!$ && !k(D))
             return be.setValue(C);
-          k(D) == I && be.setValue(C), ne[I] = C, Y(E, _e(r()("domini.writingCode")));
+          k(D) == $ && be.setValue(C), ne[$] = C, Y(E, ke(r()("domini.writingCode")));
         }
       }
     });
-    l.ok ? (ne = { ...ne, ...l.fileContents }, Be.pop(), Y(Q, _e(Date.now())), k(G).push(k(Q)), ee[k(Q)] = { fileContents: ne, messages: Be }, fe(), Y(a, "view-app"), ge = [], Y(Ze, !1), Y(Ee, !0), be.updateOptions({ readOnly: !1 }), ce()) : (ne = ee[k(Q)].fileContents, Be = ee[k(Q)].messages, Y(Ge, _e(_))), Y(rt, !1), Dt = null;
+    l.ok ? (ne = { ...ne, ...l.fileContents }, Be.pop(), Y(Q, ke(Date.now())), k(G).push(k(Q)), ee[k(Q)] = { fileContents: ne, messages: Be }, fe(), Y(a, "view-app"), ge = [], Y(Ze, !1), Y(Ee, !0), be.updateOptions({ readOnly: !1 }), ce()) : (ne = ee[k(Q)].fileContents, Be = ee[k(Q)].messages, Y(Ge, ke(_))), Y(rt, !1), Dt = null;
   }
   function At() {
     Dt.abort();
@@ -7338,18 +7333,18 @@ ${I}`;
       appModules: br
     });
     if (Y(jt, !1), !_.ok)
-      return _.error && Y(X, _e(_.error)), s("Build failed. Fix the errors with chat and try again.", { type: "error" });
+      return _.error && Y(X, ke(_.error)), s("Build failed. Fix the errors with chat and try again.", { type: "error" });
     k(j).url = _.value, ce(), Ne.src = _.value, Y(g, !0), s("App deployed successfully", { type: "success" });
   }
   const Me = (_) => {
-    Y(a, "view-app"), Y(x, _e(_));
+    Y(a, "view-app"), Y(x, ke(_));
   };
   function et(_) {
-    let M = Object.entries(ne).map(([S, $]) => ({ name: S, input: $ }));
+    let M = Object.entries(ne).map(([S, I]) => ({ name: S, input: I }));
     Jl(M, "domini-app.zip");
   }
   function qe(_) {
-    Y(Q, _e(_)), Be = ee[_].messages, ne = ee[_].fileContents, fe(), be.setValue(ne[k(D)]);
+    Y(Q, ke(_)), Be = ee[_].messages, ne = ee[_].fileContents, fe(), be.setValue(ne[k(D)]);
   }
   window.addEventListener("message", (_) => {
     switch (_.data.type) {
@@ -7362,7 +7357,7 @@ ${I}`;
       M.__click = [mu, h];
       var S = te(M);
       {
-        var $ = (C) => {
+        var I = (C) => {
           var V = wu();
           Ae(C, V);
         }, l = (C) => {
@@ -7370,11 +7365,11 @@ ${I}`;
           Ae(C, V);
         };
         at(S, (C) => {
-          k(h) ? C($) : C(l, !1);
+          k(h) ? C(I) : C(l, !1);
         });
       }
-      var w = he(S, 2), I = te(w);
-      Je((C) => je(I, C), [() => r()("ui.sidebar")]), Ae(_, M);
+      var w = he(S, 2), $ = te(w);
+      Je((C) => je($, C), [() => r()("ui.sidebar")]), Ae(_, M);
     };
     at(gt, (_) => {
       k(a) != "view-idea" && _(Oi);
@@ -7384,14 +7379,14 @@ ${I}`;
   fn.__click = [ku, K];
   var Mi = he(te(fn)), dn = he(fn, 2);
   dn.__click = [Su, K];
-  var Ri = he(te(dn)), $n = he(dn, 2);
-  $n.__click = [Eu, K];
-  var Ui = he(te($n)), Ni = he(Kn, 2), ji = te(Ni);
+  var Ri = he(te(dn)), In = he(dn, 2);
+  In.__click = [Eu, K];
+  var Ui = he(te(In)), Ni = he(Kn, 2), ji = te(Ni);
   {
     var Bt = (_) => {
-      var M = $u(), S = St(M);
+      var M = Iu(), S = St(M);
       {
-        var $ = (I) => {
+        var I = ($) => {
           var C = Tu();
           C.__click = [bu, j, s, r];
           var V = he(te(C));
@@ -7400,24 +7395,24 @@ ${I}`;
               st(C, "hidden", k(m)), je(V, ` ${le ?? ""}`);
             },
             [() => r()("ui.share")]
-          ), Ae(I, C);
+          ), Ae($, C);
         };
-        at(S, (I) => {
-          o || I($);
+        at(S, ($) => {
+          o || $(I);
         });
       }
       var l = he(S, 2);
       {
-        var w = (I) => {
+        var w = ($) => {
           var C = Au(), V = te(C);
           V.__click = [Cu, Me];
           var le = he(V, 2);
           le.__click = [Du, Me], Je(() => {
             st(V, "current", k(x) == "desktop"), st(le, "current", k(x) == "mobile");
-          }), Ae(I, C);
+          }), Ae($, C);
         };
-        at(l, (I) => {
-          o || I(w);
+        at(l, ($) => {
+          o || $(w);
         });
       }
       Ae(_, M);
@@ -7430,18 +7425,18 @@ ${I}`;
   F.__keydown = [gu, Qe];
   var J = he(F, 2), B = te(J);
   B.__click = Qe;
-  var ie = he(te(B)), O = he(ie), xe = te(O), ke = he(B, 2), pe = te(ke);
+  var ie = he(te(B)), O = he(ie), _e = te(O), xe = he(B, 2), pe = te(xe);
   {
     var Oe = (_) => {
-      var M = Iu();
+      var M = $u();
       M.__click = ct;
       var S = he(te(M));
-      Je(($) => je(S, ` ${$ ?? ""}`), [() => r()("ui.clear")]), Ae(_, M);
+      Je((I) => je(S, ` ${I ?? ""}`), [() => r()("ui.clear")]), Ae(_, M);
     }, ye = (_) => {
       var M = Pu();
       M.__click = it;
       var S = he(te(M));
-      Je(($) => je(S, ` ${$ ?? ""}`), [() => r()("ui.screenshot")]), Ae(_, M);
+      Je((I) => je(S, ` ${I ?? ""}`), [() => r()("ui.screenshot")]), Ae(_, M);
     };
     at(pe, (_) => {
       k(U) ? _(Oe) : _(ye, !1);
@@ -7453,7 +7448,7 @@ ${I}`;
       return k(L);
     },
     set selected(_) {
-      Y(L, _e(_));
+      Y(L, ke(_));
     }
   });
   var De = he(y, 2);
@@ -7463,49 +7458,49 @@ ${I}`;
     var se = (_) => {
       var M = Lu(), S = te(M);
       {
-        var $ = (le) => {
+        var I = (le) => {
           var me = Ou(), ue = te(me);
           Je(() => je(ue, k(E))), Ae(le, me);
         };
         at(S, (le) => {
-          !k(f) && k(de).length == 0 && le($);
+          !k(f) && k(de).length == 0 && le(I);
         });
       }
       var l = he(S, 2);
       Mr(l, 21, () => k(de), ds, (le, me) => {
-        var ue = Mu(), $e = te(ue);
-        $e.__click = Pe;
-        var we = he(te($e));
+        var ue = Mu(), Ie = te(ue);
+        Ie.__click = Pe;
+        var we = he(te(Ie));
         Je(() => {
           st(ue, "current", k(D) == k(me)), je(we, ` ${k(me) ?? ""}`);
         }), Ae(le, ue);
       });
-      var w = he(l, 2), I = he(te(w)), C = he(w, 2);
+      var w = he(l, 2), $ = he(te(w)), C = he(w, 2);
       {
         var V = (le) => {
           var me = Bu(), ue = te(me);
           ue.__keydown = [vu, xt], Hi(ue, "rows", 3);
-          var $e = he(ue, 2), we = te($e);
+          var Ie = he(ue, 2), we = te(Ie);
           {
-            var Ie = (tt) => {
+            var $e = (tt) => {
               var Ye = Ru();
               Ye.__click = At, Vt(1, Ye, () => on, () => ({ delay: 500 })), Vt(2, Ye, () => on), Ae(tt, Ye);
             }, ut = (tt) => {
-              var Ye = ju(), $t = te(Ye);
-              $t.__click = xt;
-              var Fi = he(te($t), 2), Vi = te(Fi), hn = he($t, 2);
+              var Ye = ju(), It = te(Ye);
+              It.__click = xt;
+              var Fi = he(te(It), 2), Vi = te(Fi), hn = he(It, 2);
               hn.__click = mt;
               var js = te(hn);
               {
-                var Bs = (It) => {
-                  var In = Uu(), qi = he(St(In), 2), Wi = te(qi);
-                  Je((zi) => je(Wi, zi), [() => r()("ui.clear")]), Ae(It, In);
-                }, Ls = (It) => {
-                  var In = Nu(), qi = he(St(In), 2), Wi = te(qi);
-                  Je((zi) => je(Wi, zi), [() => r()("ui.upload")]), Ae(It, In);
+                var Bs = ($t) => {
+                  var $n = Uu(), qi = he(St($n), 2), Wi = te(qi);
+                  Je((zi) => je(Wi, zi), [() => r()("ui.clear")]), Ae($t, $n);
+                }, Ls = ($t) => {
+                  var $n = Nu(), qi = he(St($n), 2), Wi = te(qi);
+                  Je((zi) => je(Wi, zi), [() => r()("ui.upload")]), Ae($t, $n);
                 };
-                at(js, (It) => {
-                  k(Ze) ? It(Bs) : It(Ls, !1);
+                at(js, ($t) => {
+                  k(Ze) ? $t(Bs) : $t(Ls, !1);
                 });
               }
               var Fs = he(hn, 2);
@@ -7514,18 +7509,18 @@ ${I}`;
                 get selected() {
                   return k(L);
                 },
-                set selected(It) {
-                  Y(L, _e(It));
+                set selected($t) {
+                  Y(L, ke($t));
                 }
               }), Je(
-                (It) => {
-                  $t.disabled = k(rt) || !k(Ge), je(Vi, It), hn.disabled = k(rt);
+                ($t) => {
+                  It.disabled = k(rt) || !k(Ge), je(Vi, $t), hn.disabled = k(rt);
                 },
                 [() => r()("ui.send")]
               ), Vt(1, Ye, () => on, () => ({ delay: 500 })), Vt(2, Ye, () => on), Ae(tt, Ye);
             };
             at(we, (tt) => {
-              k(rt) ? tt(Ie) : tt(ut, !1);
+              k(rt) ? tt($e) : tt(ut, !1);
             });
           }
           var Xe = he(we, 2), kt = te(Xe);
@@ -7556,7 +7551,7 @@ ${I}`;
       }
       Je(
         (le) => {
-          st(w, "hidden", k(f)), je(I, ` ${le ?? ""}`);
+          st(w, "hidden", k(f)), je($, ` ${le ?? ""}`);
         },
         [() => r()("ui.stop")]
       ), Vt(3, M, () => yl, () => ({ axis: "x" })), Ae(_, M);
@@ -7575,8 +7570,8 @@ ${I}`;
   ln(T, (_) => Ne = _, () => Ne);
   var R = he(ae, 2);
   R.__change = nt, ln(R, (_) => v = _, () => v), Je(
-    (_, M, S, $, l, w, I, C) => {
-      st(fn, "current", k(a) == "view-idea"), je(Mi, ` ${_ ?? ""}`), st(dn, "current", k(a) == "view-code"), je(Ri, ` ${M ?? ""}`), st($n, "current", k(a) == "view-app"), je(Ui, ` ${S ?? ""}`), st(Xt, "current", k(a) == "view-idea"), je(Bi, $), je(Li, l), je(p, w), Hi(F, "placeholder", I), je(ie, ` ${C ?? ""} `), je(xe, u), st(ae, "current", k(a) != "view-idea"), st(z, "current", k(a) == "view-code"), st(P, "current", k(a) == "view-app"), st(P, "mobile", k(a) == "view-app" && k(x) == "mobile");
+    (_, M, S, I, l, w, $, C) => {
+      st(fn, "current", k(a) == "view-idea"), je(Mi, ` ${_ ?? ""}`), st(dn, "current", k(a) == "view-code"), je(Ri, ` ${M ?? ""}`), st(In, "current", k(a) == "view-app"), je(Ui, ` ${S ?? ""}`), st(Xt, "current", k(a) == "view-idea"), je(Bi, I), je(Li, l), je(p, w), Hi(F, "placeholder", $), je(ie, ` ${C ?? ""} `), je(_e, u), st(ae, "current", k(a) != "view-idea"), st(z, "current", k(a) == "view-code"), st(P, "current", k(a) == "view-app"), st(P, "mobile", k(a) == "view-app" && k(x) == "mobile");
     },
     [
       () => r()("ui.idea"),
@@ -7594,7 +7589,7 @@ zn(["click", "keydown", "change"]);
 let Us = Ue("info"), Ns = Ue(""), wr = Ue(!1);
 function qu() {
   Ba("toast", (e, { type: t = "info", duration: n = 3e3 } = {}) => {
-    Y(wr, !0), Y(Ns, _e(e)), Y(Us, _e(t)), n && setTimeout(
+    Y(wr, !0), Y(Ns, ke(e)), Y(Us, ke(t)), n && setTimeout(
       () => {
         Y(wr, !1);
       },
@@ -7695,7 +7690,7 @@ const tf = /* @__PURE__ */ Nr(ef);
 qr.extend(Xu);
 qr.extend(tf);
 const nf = (e, t) => {
-  globalThis._DOMINI_BASE_URL = t.provider_base_url, globalThis._DOMINI_API_KEY = t.provider_api_key, globalThis._DOMINI_CODER_MODEL = t.domini_coder_model, globalThis._DOMINI_VISON_MODEL = t.domini_vision_model, globalThis._DOMINI_PROMPT_DESCRIBE = t.domini_prompt_describe, globalThis._DOMINI_PROMPT_IMPROVE = t.domini_prompt_improve, globalThis._DOMINI_PROMPT_PERSONA = t.domini_prompt_persona, globalThis._DOMINI_PROMPT_REQUEST = t.domini_prompt_request, Ga(Yu, {
+  globalThis._DOMINI_BASE_URL = t.provider_base_url, globalThis._DOMINI_API_KEY = t.provider_api_key, globalThis._DOMINI_PROVIDER_SERVICES = t.provider_services, globalThis._DOMINI_CODER_MODEL = t.domini_coder_model, globalThis._DOMINI_VISON_MODEL = t.domini_vision_model, globalThis._DOMINI_PROMPT_DESCRIBE = t.domini_prompt_describe, globalThis._DOMINI_PROMPT_IMPROVE = t.domini_prompt_improve, globalThis._DOMINI_PROMPT_PERSONA = t.domini_prompt_persona, globalThis._DOMINI_PROMPT_REQUEST = t.domini_prompt_request, Ga(Yu, {
     target: e,
     props: t
   });
