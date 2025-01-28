@@ -1,0 +1,143 @@
+<hyberbolic>
+HyperbolicSDK does not include in aiClient. So you need to rewrite the code below to use it. And only use the functions that are needed.
+
+```javascript
+const apiKey = "eyJhbGci..."
+
+class HyperbolicSDK {
+  constructor(apiKey) {
+    this.apiKey = apiKey;
+    this.baseUrl = 'https://api.hyperbolic.xyz/v1';
+    this.headers = {
+      'Authorization': `Bearer ${this.apiKey}`,
+      'Content-Type': 'application/json'
+    };
+  }
+
+  // Get available marketplace instances
+  async getMarketplace(filters = {}) {
+    try {
+      const response = await fetch(this.baseUrl, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify({ filters })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching marketplace:', error);
+      throw error;
+    }
+  }
+
+  // Create a new instance
+  async createInstance(params) {
+    try {
+      const response = await fetch(`${this.baseUrl}/marketplace/instances/create`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(params)
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating instance:', error);
+      throw error;
+    }
+  }
+
+  // Get current instances
+  async getInstances() {
+    try {
+      const response = await fetch(`${this.baseUrl}/marketplace/instances`, {
+        method: 'GET',
+        headers: this.headers
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching instances:', error);
+      throw error;
+    }
+  }
+
+  // Get instance history
+  async getInstanceHistory() {
+    try {
+      const response = await fetch(`${this.baseUrl}/marketplace/instances/history`, {
+        method: 'GET',
+        headers: this.headers
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error fetching instance history:', error);
+      throw error;
+    }
+  }
+
+  // Terminate an instance
+  async terminateInstance(instanceId) {
+    try {
+      const response = await fetch(`${this.baseUrl}/marketplace/instances/terminate`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify({
+          id: instanceId
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error terminating instance:', error);
+      throw error;
+    }
+  }
+
+  // Create chat completion
+  async chatComplete(params) {
+    try {
+      const response = await fetch(`${this.baseUrl}/chat/completions`, {
+        method: 'POST',
+        headers: this.headers,
+        body: JSON.stringify(params)
+      })
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      // If streaming is enabled, return the response object for streaming
+      if (params.stream) {
+        return response;
+      }
+
+      return await response.json();
+    } catch (error) {
+      console.error('Error creating chat completion:', error);
+      throw error;
+    }
+  }
+}
+```
+</hyberbolic>
